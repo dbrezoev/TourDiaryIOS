@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Just for githubretyerty");
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
