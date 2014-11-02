@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>83073399-C7BA-4EB1-B9D8-2D5518CE1A44</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TourDiary</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>42FCE8042AB982AE2F61914D04CF2F20721588BA</key>
+		<string>https://github.com/dbrezoev/TourDiaryIOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TourDiary.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>42FCE8042AB982AE2F61914D04CF2F20721588BA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dbrezoev/TourDiaryIOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>42FCE8042AB982AE2F61914D04CF2F20721588BA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>42FCE8042AB982AE2F61914D04CF2F20721588BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TourDiary</string>
+		</dict>
+	</array>
+</dict>
+</plist>

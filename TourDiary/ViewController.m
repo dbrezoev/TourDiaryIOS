@@ -5,7 +5,6 @@
 //  Created by admin on 11/1/14.
 //  Copyright (c) 2014 brezoev. All rights reserved.
 //
-//start some extra changes made
 
 #import "ViewController.h"
 
