@@ -30,18 +30,21 @@
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Buy some cheap clothes"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Buy two bateries"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Try bulgarian rakia"]];
-    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Remember your wedding anniversary!"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Call Pesho"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note2"]];
     
     // Set the view as datasource
+    
+    NSLog(@"View did load");
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    //self.tableView.backgroundColor = [UIColor redColor];
 }
 
 #pragma mark - UITableViewDataSource protocol methods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"%lu",(unsigned long)_toDoItems.count);
     return _toDoItems.count;
 }
 
@@ -53,6 +56,7 @@
     
     ToDoItem *item = _toDoItems[[indexPath row]];
     cell.textLabel.text = item.content;
+    NSLog(@"row for index path");
     return cell;
 }
 
