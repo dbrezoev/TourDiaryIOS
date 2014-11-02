@@ -8,6 +8,7 @@
 
 #import "ToDoViewController.h"
 #import "ToDoItem.h"
+#import "CustomTableViewCell.h"
 
 @interface ToDoViewController ()
 
@@ -16,6 +17,7 @@
 @implementation ToDoViewController{
     NSMutableArray* _toDoItems;
 }
+static const float DEFAULT_ROW_HEIGHT = 50.0f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,8 +40,11 @@
     
     NSLog(@"View did load");
     self.tableView.dataSource = self;
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    //self.tableView.backgroundColor = [UIColor redColor];
+    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+    self.tableView.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor blackColor];
 }
 
 #pragma mark - UITableViewDataSource protocol methods
@@ -52,17 +57,50 @@
     
     NSString *identifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     ToDoItem *item = _toDoItems[[indexPath row]];
     cell.textLabel.text = item.content;
     NSLog(@"row for index path");
+    
+    cell.delegate = self;
+    cell.todoItem = item;
     return cell;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDataDelegate protocol methods
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return DEFAULT_ROW_HEIGHT;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [self colorForIndex:indexPath.row];
+}
+
+//style the cells
+-(UIColor*)colorForIndex:(NSInteger) index {
+    //TODO: Change the colors to look better
+    if(index % 2 == 0){
+        return [UIColor colorWithRed: 1.0 green:0.5 blue: 0.0 alpha:1.0];
+    }
+    else{
+        return [UIColor colorWithRed: 0.0 green:0.5 blue: 1.0 alpha:1.0];
+    }
+}
+
+-(void)toDoItemDeleted:(id)todoItem {
+    // use the UITableView to animate the removal of this row
+    NSUInteger index = [_toDoItems indexOfObject:todoItem];
+    [self.tableView beginUpdates];
+    [_toDoItems removeObject:todoItem];
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+                          withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
 }
 
 @end

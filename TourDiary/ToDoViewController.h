@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TableViewCellDelegate.h"
 
-@interface ToDoViewController : UIViewController<UITableViewDataSource>
+@interface ToDoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

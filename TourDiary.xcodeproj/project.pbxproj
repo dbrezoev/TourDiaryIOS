@@ -15,6 +15,7 @@
 		84954B341A056B840091E43E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84954B321A056B840091E43E /* LaunchScreen.xib */; };
 		84954B401A056B850091E43E /* TourDiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B3F1A056B850091E43E /* TourDiaryTests.m */; };
 		849968171A06331300CFA2F3 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 849968161A06331300CFA2F3 /* ToDoItem.m */; };
+		849EA2B71A069A8000BB0C56 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 		84954B3F1A056B850091E43E /* TourDiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TourDiaryTests.m; sourceTree = "<group>"; };
 		849968151A06331300CFA2F3 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
 		849968161A06331300CFA2F3 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
+		849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,9 @@
 		84954B221A056B840091E43E /* TourDiary */ = {
 			isa = PBXGroup;
 			children = (
+				849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */,
+				849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */,
+				849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */,
 				84954B271A056B840091E43E /* AppDelegate.h */,
 				84954B281A056B840091E43E /* AppDelegate.m */,
 				84954B2A1A056B840091E43E /* ToDoViewController.h */,
@@ -227,6 +234,7 @@
 				84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */,
 				84954B291A056B840091E43E /* AppDelegate.m in Sources */,
 				849968171A06331300CFA2F3 /* ToDoItem.m in Sources */,
+				849EA2B71A069A8000BB0C56 /* CustomTableViewCell.m in Sources */,
 				84954B261A056B840091E43E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

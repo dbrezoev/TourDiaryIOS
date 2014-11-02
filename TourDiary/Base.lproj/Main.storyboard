@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="-68" width="400" height="600"/>
+                                    <rect key="frame" x="-11" y="36" width="411" height="515"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="SbI-8X-Anf" id="Ht9-rE-4qO"/>
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDe-1a-FPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.5" y="621"/>
+            <point key="canvasLocation" x="1024.5" y="645"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Jrw-pO-WRN">
