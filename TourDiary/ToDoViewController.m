@@ -93,7 +93,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     }
 }
 
--(void)toDoItemDeleted:(id)todoItem {
+-(void)deleteItem:(id)todoItem {
     // use the UITableView to animate the removal of this row
     NSUInteger index = [_toDoItems indexOfObject:todoItem];
     [self.tableView beginUpdates];

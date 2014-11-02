@@ -11,6 +11,7 @@
 @implementation CustomTableViewCell{
     CGPoint _originalCenter;
     BOOL _deleteOnDragRelease;
+    BOOL _markDoneOnDragRelease;
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -41,8 +42,8 @@
     NSLog(@"Gesture should vbegin");
     CGPoint translation = [gestureRecognizer translationInView:[self superview]];
     // Check for horizontal gesture
-    //fabs returns the absolute value of the argument
-    if (fabsf(translation.x) > fabsf(translation.y)) {
+    
+    if (fabsf(translation.x) > fabsf(translation.y)) { //fabs returns the absolute value of the argument
         return YES;
     }
     return NO;
@@ -50,25 +51,26 @@
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
     NSLog(@"handle pan");
-    // 1
+    
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         // if the gesture has just started, record the current centre location
         _originalCenter = self.center;
     }
     
-    // 2
     if (recognizer.state == UIGestureRecognizerStateChanged) {
         // translate the center
         CGPoint translation = [recognizer translationInView:self];
         self.center = CGPointMake(_originalCenter.x + translation.x, _originalCenter.y);
         // determine whether the item has been dragged far enough to initiate a delete / complete
         _deleteOnDragRelease = self.frame.origin.x < -self.frame.size.width / 2;
-        
+        _markDoneOnDragRelease = self.frame.origin.x > 10;//self.frame.size.width / 2;
+        NSLog(@"%f",self.frame.origin.x);
+        NSLog(@"%f",self.frame.size.width/2);
+        NSLog(@"+++++++");
     }
     
-    // 3
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        // the frame this cell would have had before being dragged
+        // the frame this cell had before drag
         CGRect originalFrame = CGRectMake(0, self.frame.origin.y,
                                           self.bounds.size.width, self.bounds.size.height);
         if (!_deleteOnDragRelease) {
@@ -81,8 +83,14 @@
         }
         
         if (_deleteOnDragRelease) {
-            // notify the delegate that this item should be deleted
-            [self.delegate toDoItemDeleted:self.todoItem];
+            [self.delegate deleteItem:self.todoItem];
+        }
+        if (_markDoneOnDragRelease) {
+            // mark the item as complete and update the UI state
+            self.todoItem.completed = YES;
+            NSLog(@"GREEN");
+            self.textLabel.backgroundColor = [UIColor greenColor];
+            
         }
     }
 }
