@@ -19,10 +19,16 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         
-        UIGestureRecognizer* recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+        UIPanGestureRecognizer* recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
         recognizer.delegate = self;
         [self addGestureRecognizer:recognizer];
+        
+//        UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+//                recognizerL.minimumPressDuration = 2.0f;
+//                recognizerL.delegate = self;
+//            [self addGestureRecognizer:recognizerL];
     }
+
     
     return self;
 }
@@ -89,10 +95,17 @@
             // mark the item as complete and update the UI state
             self.todoItem.completed = YES;
             NSLog(@"GREEN");
-            self.textLabel.backgroundColor = [UIColor greenColor];
+            //self.textLabel.backgroundColor = [UIColor greenColor];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+            [alert show];
             
         }
     }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    //TODO: here add new item with CORE DATA
+    NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
 }
 
 @end

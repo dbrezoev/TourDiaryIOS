@@ -17,6 +17,7 @@
 @implementation ToDoViewController{
     NSMutableArray* _toDoItems;
 }
+
 static const float DEFAULT_ROW_HEIGHT = 50.0f;
 
 - (void)viewDidLoad {
@@ -45,6 +46,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor blackColor];
+
 }
 
 #pragma mark - UITableViewDataSource protocol methods
@@ -65,6 +67,8 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     
     cell.delegate = self;
     cell.todoItem = item;
+    [cell setUserInteractionEnabled:YES];
+    [tableView setUserInteractionEnabled:YES];
     return cell;
 }
 
@@ -94,13 +98,47 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 }
 
 -(void)deleteItem:(id)todoItem {
-    // use the UITableView to animate the removal of this row
-    NSUInteger index = [_toDoItems indexOfObject:todoItem];
-    [self.tableView beginUpdates];
+//    // use the UITableView to animate the removal of this row
+//    NSUInteger index = [_toDoItems indexOfObject:todoItem];
+//    [self.tableView beginUpdates];
+//    [_toDoItems removeObject:todoItem];
+//    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+//                          withRowAnimation:UITableViewRowAnimationFade];
+//    [self.tableView endUpdates];
+    
+    float delay = 0.0;
+    
+    // remove the model object
     [_toDoItems removeObject:todoItem];
-    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
-                          withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView endUpdates];
+    
+    // find the visible cells
+    NSArray* visibleCells = [self.tableView visibleCells];
+    
+    UIView* lastView = [visibleCells lastObject];
+    bool startAnimating = false;
+    
+    // iterate over all of the cells
+    for(CustomTableViewCell* cell in visibleCells) {
+        if (startAnimating) {
+            [UIView animateWithDuration:0.3
+                                  delay:delay
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 cell.frame = CGRectOffset(cell.frame, 0.0f, -cell.frame.size.height);
+                             }
+                             completion:^(BOOL finished){
+                                 if (cell == lastView) {
+                                     [self.tableView reloadData];
+                                 }
+                             }];
+            delay+=0.03;
+        }
+        
+        // if you have reached the item that was deleted, start animating
+        if (cell.todoItem == todoItem) {
+            startAnimating = true;
+            cell.hidden = YES;
+        }
+    }
 }
-
 @end
