@@ -20,17 +20,37 @@
     if(self){
         
         UIPanGestureRecognizer* recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-        recognizer.delegate = self;
+        //recognizer.delegate = self;
         [self addGestureRecognizer:recognizer];
         
-//        UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-//                recognizerL.minimumPressDuration = 2.0f;
-//                recognizerL.delegate = self;
-//            [self addGestureRecognizer:recognizerL];
+        UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+                recognizerL.minimumPressDuration = 2.0f;
+                //recognizerL.delegate = self;
+            [self addGestureRecognizer:recognizerL];
+        
     }
-
     
     return self;
+}
+
+-(void)handleLongPress:(UILongPressGestureRecognizer*)sender{
+    NSLog(@"long press");
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"UIGestureRecognizerStateEnded");
+        //Do Whatever You want on End of Gesture
+    }
+    else if (sender.state == UIGestureRecognizerStateBegan){
+        NSLog(@"UIGestureRecognizerStateBegan.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+                [alert show];
+        //Do Whatever You want on Began of Gesture
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    //TODO: here add new item with CORE DATA
+    NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
 }
 
 - (void)awakeFromNib {
@@ -44,16 +64,16 @@
 //}
 
 #pragma mark - horizontal pan gesture methods
--(BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
-    NSLog(@"Gesture should vbegin");
-    CGPoint translation = [gestureRecognizer translationInView:[self superview]];
-    // Check for horizontal gesture
-    
-    if (fabsf(translation.x) > fabsf(translation.y)) { //fabs returns the absolute value of the argument
-        return YES;
-    }
-    return NO;
-}
+//-(BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
+//    NSLog(@"Gesture should vbegin");
+//    CGPoint translation = [gestureRecognizer translationInView:[self superview]];
+//    // Check for horizontal gesture
+//    
+//    if (fabsf(translation.x) > fabsf(translation.y)) { //fabs returns the absolute value of the argument
+//        return YES;
+//    }
+//    return NO;
+//}
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
     NSLog(@"handle pan");
@@ -90,6 +110,8 @@
         
         if (_deleteOnDragRelease) {
             [self.delegate deleteItem:self.todoItem];
+            
+            int a = 8;
         }
         if (_markDoneOnDragRelease) {
             // mark the item as complete and update the UI state
@@ -103,9 +125,9 @@
         }
     }
 }
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    //TODO: here add new item with CORE DATA
-    NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
-}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    //TODO: here add new item with CORE DATA
+//    NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
+//}
 
 @end

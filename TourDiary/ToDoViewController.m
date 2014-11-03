@@ -46,7 +46,6 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor blackColor];
-
 }
 
 #pragma mark - UITableViewDataSource protocol methods
