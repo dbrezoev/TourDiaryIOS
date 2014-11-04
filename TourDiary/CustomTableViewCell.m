@@ -27,7 +27,6 @@
         recognizerL.minimumPressDuration = 2.0f;
         //        //recognizerL.delegate = self;
         [self addGestureRecognizer:recognizerL];
-        
     }
     
     return self;
@@ -68,18 +67,6 @@
 //    // Configure the view for the selected state
 //}
 
-#pragma mark - horizontal pan gesture methods
-//-(BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
-//    NSLog(@"Gesture should vbegin");
-//    CGPoint translation = [gestureRecognizer translationInView:[self superview]];
-//    // Check for horizontal gesture
-//    
-//    if (fabsf(translation.x) > fabsf(translation.y)) { //fabs returns the absolute value of the argument
-//        return YES;
-//    }
-//    return NO;
-//}
-
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
     NSLog(@"handle pan");
     
@@ -94,7 +81,7 @@
         self.center = CGPointMake(_originalCenter.x + translation.x, _originalCenter.y);
         // determine whether the item has been dragged far enough to initiate a delete / complete
         _deleteOnDragRelease = self.frame.origin.x < -self.frame.size.width / 2;
-        _markDoneOnDragRelease = self.frame.origin.x > 10;//self.frame.size.width / 2;
+        _markDoneOnDragRelease = self.frame.origin.x > self.frame.size.width / 2;
         NSLog(@"%f",self.frame.origin.x);
         NSLog(@"%f",self.frame.size.width/2);
         NSLog(@"+++++++");
