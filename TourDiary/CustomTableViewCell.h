@@ -10,7 +10,7 @@
 #import "ToDoItem.h"
 #import "TableViewCellDelegate.h"
 
-@interface CustomTableViewCell : UITableViewCell
+@interface CustomTableViewCell : UITableViewCell <UIGestureRecognizerDelegate>
 // The item that this cell renders.
 @property (nonatomic) ToDoItem *todoItem;
 

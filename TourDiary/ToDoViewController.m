@@ -36,6 +36,11 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Call Pesho"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note"]];
     [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note2"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"See Bob's family"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Call Pesho"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note2"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"See Bob's family"]];
     
     // Set the view as datasource
     

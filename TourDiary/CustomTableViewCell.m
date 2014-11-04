@@ -20,17 +20,22 @@
     if(self){
         
         UIPanGestureRecognizer* recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-        //recognizer.delegate = self;
+        recognizer.delegate = self;
         [self addGestureRecognizer:recognizer];
         
         UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-                recognizerL.minimumPressDuration = 2.0f;
-                //recognizerL.delegate = self;
-            [self addGestureRecognizer:recognizerL];
+        recognizerL.minimumPressDuration = 2.0f;
+        //        //recognizerL.delegate = self;
+        [self addGestureRecognizer:recognizerL];
         
     }
     
     return self;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 
 -(void)handleLongPress:(UILongPressGestureRecognizer*)sender{
