@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ral-rA-H1c">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item 2-->
@@ -133,7 +134,7 @@
         <!--Item 1-->
         <scene sceneID="Jrw-pO-WRN">
             <objects>
-                <viewController id="hcH-Eo-Z4v" sceneMemberID="viewController">
+                <viewController id="hcH-Eo-Z4v" customClass="LandmarkViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EKW-sQ-lfb"/>
                         <viewControllerLayoutGuide type="bottom" id="eEZ-Q7-hX5"/>
@@ -142,33 +143,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scene 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8Y-NQ-UJm">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qnH-u2-bCe">
+                                <rect key="frame" x="0.0" y="103" width="625" height="448"/>
+                                <color key="backgroundColor" red="0.74680612800000001" green="0.81734789679999997" blue="0.88075322690000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.43059956125419496" green="0.36754813306568301" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.74680612795535906" green="0.81734789677979713" blue="0.88075322690000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.063024598599999995" green="0.01760045536" blue="0.88075322690000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landmarks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYV-iu-MgB">
+                                <rect key="frame" x="96" y="40" width="150" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="RMA-6W-2L4"/>
+                                    <constraint firstAttribute="width" constant="150" id="ekm-48-MR3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.36334551712889651" green="1" blue="0.52872887945833891" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="170" y="98" width="60" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="n8Y-NQ-UJm"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="n8Y-NQ-UJm"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" red="0.43059956129999999" green="0.36754813310000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qnH-u2-bCe" firstAttribute="bottom" secondItem="eEZ-Q7-hX5" secondAttribute="top" id="1a2-C4-h61"/>
+                            <constraint firstItem="qnH-u2-bCe" firstAttribute="top" secondItem="tYV-iu-MgB" secondAttribute="bottom" constant="20" id="EIh-tM-9n3"/>
+                            <constraint firstItem="tYV-iu-MgB" firstAttribute="top" secondItem="EKW-sQ-lfb" secondAttribute="bottom" constant="20" id="Enl-EY-D9u"/>
+                            <constraint firstItem="qnH-u2-bCe" firstAttribute="leading" secondItem="zKg-k5-E4v" secondAttribute="leading" id="WSJ-KU-Fhg"/>
+                            <constraint firstItem="tYV-iu-MgB" firstAttribute="leading" secondItem="zKg-k5-E4v" secondAttribute="leading" constant="96" id="m19-XP-ov3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qnH-u2-bCe" secondAttribute="trailing" constant="-41" id="nsw-t8-cO1"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="VgG-b0-rps"/>
+                    <connections>
+                        <outlet property="landmarkTableView" destination="qnH-u2-bCe" id="R2F-qE-wQC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGN-G6-a8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.5" y="-61"/>
+            <point key="canvasLocation" x="976" y="-61"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="P6R-tf-RtA">
