@@ -20,7 +20,7 @@
     if(self){
         
         UIPanGestureRecognizer* recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-        recognizer.delegate = self;
+      	  recognizer.delegate = self;
         [self addGestureRecognizer:recognizer];
         
         UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
