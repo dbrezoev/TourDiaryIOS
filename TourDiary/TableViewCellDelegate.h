@@ -7,8 +7,10 @@
 //
 
 #import "ToDoItem.h"
+#import "ListItem.h"
 
 
 @protocol TableViewCellDelegate <NSObject>
--(void) deleteItem:(ToDoItem*)todoItem;
+-(void) deleteItem:(ListItem*)todoItem;
+-(void) addItem:(ToDoItem*)todoItem;
 @end
