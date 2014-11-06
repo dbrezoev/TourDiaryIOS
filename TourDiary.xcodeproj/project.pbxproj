@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */; };
-		8416EB331A0A6EE500CB2492 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416EB321A0A6EE500CB2492 /* ListItem.m */; };
-		841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */; };
-		841B60DB1A0A2C7E00C2EFF3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */; };
 		84954B261A056B840091E43E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B251A056B840091E43E /* main.m */; };
 		84954B291A056B840091E43E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B281A056B840091E43E /* AppDelegate.m */; };
 		84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B2B1A056B840091E43E /* ToDoViewController.m */; };
@@ -20,13 +16,6 @@
 		84954B401A056B850091E43E /* TourDiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B3F1A056B850091E43E /* TourDiaryTests.m */; };
 		849968171A06331300CFA2F3 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 849968161A06331300CFA2F3 /* ToDoItem.m */; };
 		849EA2B71A069A8000BB0C56 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */; };
-		84A9E1F91A0B939A001C6870 /* CreateToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */; };
-		84A9E2001A0BBED6001C6870 /* bg_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A9E1FA1A0BBED5001C6870 /* bg_tile.png */; };
-		84A9E2011A0BBED6001C6870 /* bg_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A9E1FB1A0BBED5001C6870 /* bg_tile@2x.png */; };
-		84A9E2021A0BBED6001C6870 /* btn_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A9E1FC1A0BBED5001C6870 /* btn_field.png */; };
-		84A9E2031A0BBED6001C6870 /* btn_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A9E1FD1A0BBED5001C6870 /* btn_field@2x.png */; };
-		84A9E2041A0BBED6001C6870 /* field.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A9E1FE1A0BBED6001C6870 /* field.png */; };
-		84A9E2051A0BBED6001C6870 /* field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A9E1FF1A0BBED6001C6870 /* field@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8416EB281A0A641C00CB2492 /* ListItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListItem.xcdatamodel; sourceTree = "<group>"; };
-		8416EB311A0A6EE500CB2492 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
-		8416EB321A0A6EE500CB2492 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
-		841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataHelper.h; path = TourDiary/CoreDataHelper.h; sourceTree = "<group>"; };
-		841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataHelper.m; path = TourDiary/CoreDataHelper.m; sourceTree = "<group>"; };
-		841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84954B201A056B840091E43E /* TourDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TourDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84954B241A056B840091E43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84954B251A056B840091E43E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -64,14 +47,6 @@
 		849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCellDelegate.h; sourceTree = "<group>"; };
-		84A9E1F71A0B939A001C6870 /* CreateToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateToDoViewController.h; sourceTree = "<group>"; };
-		84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateToDoViewController.m; sourceTree = "<group>"; };
-		84A9E1FA1A0BBED5001C6870 /* bg_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_tile.png; sourceTree = "<group>"; };
-		84A9E1FB1A0BBED5001C6870 /* bg_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tile@2x.png"; sourceTree = "<group>"; };
-		84A9E1FC1A0BBED5001C6870 /* btn_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_field.png; sourceTree = "<group>"; };
-		84A9E1FD1A0BBED5001C6870 /* btn_field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_field@2x.png"; sourceTree = "<group>"; };
-		84A9E1FE1A0BBED6001C6870 /* field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = field.png; sourceTree = "<group>"; };
-		84A9E1FF1A0BBED6001C6870 /* field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "field@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				841B60DB1A0A2C7E00C2EFF3 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,34 +67,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8416EB2D1A0A655800CB2492 /* DBHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				8416EB311A0A6EE500CB2492 /* ListItem.h */,
-				8416EB321A0A6EE500CB2492 /* ListItem.m */,
-				8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */,
-				841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */,
-				841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */,
-			);
-			name = DBHelpers;
-			sourceTree = "<group>";
-		};
-		841B60DC1A0A2C8900C2EFF3 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		84954B171A056B840091E43E = {
 			isa = PBXGroup;
 			children = (
-				8416EB2D1A0A655800CB2492 /* DBHelpers */,
 				84954B221A056B840091E43E /* TourDiary */,
 				84954B3C1A056B850091E43E /* TourDiaryTests */,
 				84954B211A056B840091E43E /* Products */,
-				841B60DC1A0A2C8900C2EFF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,8 +88,6 @@
 		84954B221A056B840091E43E /* TourDiary */ = {
 			isa = PBXGroup;
 			children = (
-				84A9E1F71A0B939A001C6870 /* CreateToDoViewController.h */,
-				84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */,
 				849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */,
 				849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */,
 				849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */,
@@ -158,12 +108,6 @@
 		84954B231A056B840091E43E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84A9E1FA1A0BBED5001C6870 /* bg_tile.png */,
-				84A9E1FB1A0BBED5001C6870 /* bg_tile@2x.png */,
-				84A9E1FC1A0BBED5001C6870 /* btn_field.png */,
-				84A9E1FD1A0BBED5001C6870 /* btn_field@2x.png */,
-				84A9E1FE1A0BBED6001C6870 /* field.png */,
-				84A9E1FF1A0BBED6001C6870 /* field@2x.png */,
 				84954B241A056B840091E43E /* Info.plist */,
 				84954B251A056B840091E43E /* main.m */,
 			);
@@ -267,15 +211,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A9E2041A0BBED6001C6870 /* field.png in Resources */,
-				84A9E2001A0BBED6001C6870 /* bg_tile.png in Resources */,
 				84954B2F1A056B840091E43E /* Main.storyboard in Resources */,
 				84954B341A056B840091E43E /* LaunchScreen.xib in Resources */,
 				84954B311A056B840091E43E /* Images.xcassets in Resources */,
-				84A9E2011A0BBED6001C6870 /* bg_tile@2x.png in Resources */,
-				84A9E2031A0BBED6001C6870 /* btn_field@2x.png in Resources */,
-				84A9E2021A0BBED6001C6870 /* btn_field.png in Resources */,
-				84A9E2051A0BBED6001C6870 /* field@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8416EB331A0A6EE500CB2492 /* ListItem.m in Sources */,
-				841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */,
 				84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */,
 				84954B291A056B840091E43E /* AppDelegate.m in Sources */,
 				849968171A06331300CFA2F3 /* ToDoItem.m in Sources */,
-				84A9E1F91A0B939A001C6870 /* CreateToDoViewController.m in Sources */,
 				849EA2B71A069A8000BB0C56 /* CustomTableViewCell.m in Sources */,
-				8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */,
 				84954B261A056B840091E43E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,20 +438,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8416EB281A0A641C00CB2492 /* ListItem.xcdatamodel */,
-			);
-			currentVersion = 8416EB281A0A641C00CB2492 /* ListItem.xcdatamodel */;
-			name = ListItem.xcdatamodeld;
-			path = TourDiary/ListItem.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 84954B181A056B840091E43E /* Project object */;
 }

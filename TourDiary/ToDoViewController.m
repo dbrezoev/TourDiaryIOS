@@ -9,65 +9,54 @@
 #import "ToDoViewController.h"
 #import "ToDoItem.h"
 #import "CustomTableViewCell.h"
-#import "CoreDataHelper.h"
-#import "ListItem.h"
 
 @interface ToDoViewController ()
-@property(nonatomic, strong) CoreDataHelper* cdHelper;
 
 @end
 
 @implementation ToDoViewController{
     NSMutableArray* _toDoItems;
-    NSMutableArray* fetched;
 }
 
 static const float DEFAULT_ROW_HEIGHT = 50.0f;
 
 - (void)viewDidLoad {
-    
     [super viewDidLoad];
-    _toDoItems = [NSMutableArray array];
-    _cdHelper = [[CoreDataHelper alloc] init];
-    [_cdHelper setupCoreData];
-
+    
+    // TODO: This should be working with CORE DATA
+    _toDoItems = [[NSMutableArray alloc] init];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Take photo of the museum"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"See the strange house"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Don't forget to pay the WC"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"See Bob's family"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Take a photo from the peak"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Buy some cheap clothes"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Buy two bateries"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Try bulgarian rakia"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Call Pesho"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note2"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"See Bob's family"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Call Pesho"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"Some other note2"]];
+    [_toDoItems addObject:[ToDoItem toDoItemWithContent:@"See Bob's family"]];
+    
     // Set the view as datasource
+    
     NSLog(@"View did load");
     self.tableView.dataSource = self;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"cell"];
     
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    //self.tableView.backgroundColor = [UIColor blackColor];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_tile.png"]];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [self updateUI];
-}
-
--(void) updateUI{
-    NSFetchRequest* request =
-    [NSFetchRequest fetchRequestWithEntityName:@"ListItem"];
-    fetched = [[_cdHelper.context executeFetchRequest:request error:nil]mutableCopy];
-}
-
--(void) addItem:(ToDoItem*)todoItem{
-    ListItem* itemToAdd =
-    [NSEntityDescription insertNewObjectForEntityForName:@"ListItem" inManagedObjectContext:_cdHelper.context];
-    
-    itemToAdd.content = todoItem.content;
-    
-    [self.cdHelper.context insertObject:itemToAdd];
-    [self.cdHelper saveContext];
-    [self updateUI];
-    NSLog(@"List item: %@ added successfully", todoItem.content);
+    self.tableView.backgroundColor = [UIColor blackColor];
 }
 
 #pragma mark - UITableViewDataSource protocol methods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    return fetched.count;
+    NSLog(@"%lu",(unsigned long)_toDoItems.count);
+    return _toDoItems.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -76,17 +65,20 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
-    ListItem *item = fetched[[indexPath row]];
+    ToDoItem *item = _toDoItems[[indexPath row]];
     cell.textLabel.text = item.content;
     NSLog(@"row for index path");
     
     cell.delegate = self;
     cell.todoItem = item;
+    [cell setUserInteractionEnabled:YES];
+    [tableView setUserInteractionEnabled:YES];
     return cell;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataDelegate protocol methods
@@ -109,13 +101,19 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     }
 }
 
--(void)deleteItem:(ListItem*)todoItem {
-    
-        [_cdHelper.context deleteObject:todoItem];
-        [self.cdHelper saveContext];
-        [self updateUI];
+-(void)deleteItem:(id)todoItem {
+//    // use the UITableView to animate the removal of this row
+//    NSUInteger index = [_toDoItems indexOfObject:todoItem];
+//    [self.tableView beginUpdates];
+//    [_toDoItems removeObject:todoItem];
+//    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]]
+//                          withRowAnimation:UITableViewRowAnimationFade];
+//    [self.tableView endUpdates];
     
     float delay = 0.0;
+    
+    // remove the model object
+    [_toDoItems removeObject:todoItem];
     
     // find the visible cells
     NSArray* visibleCells = [self.tableView visibleCells];
@@ -123,6 +121,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     UIView* lastView = [visibleCells lastObject];
     bool startAnimating = false;
     
+    // iterate over all of the cells
     for(CustomTableViewCell* cell in visibleCells) {
         if (startAnimating) {
             [UIView animateWithDuration:0.3
@@ -146,6 +145,4 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
         }
     }
 }
-//- (IBAction)createToDo:(UIButton *)sender {
-//}
 @end
