@@ -11,7 +11,7 @@
 @interface ToDoItem : NSObject
 
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic) BOOL completed;
+@property (nonatomic, strong) NSNumber* completed;
 -(id)initWithContent:(NSString*)text;
 +(id)toDoItemWithContent:(NSString*)text;
 

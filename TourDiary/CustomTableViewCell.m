@@ -48,24 +48,12 @@
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 alert.alertViewStyle = UIAlertViewStylePlainTextInput;
                 [alert show];
-        //Do Whatever You want on Began of Gesture
     }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    //TODO: here add new item with CORE DATA
-    NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
 }
 
 - (void)awakeFromNib {
     // Initialization code
 }
-
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//
-//    // Configure the view for the selected state
-//}
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
     NSLog(@"handle pan");
@@ -82,9 +70,6 @@
         // determine whether the item has been dragged far enough to initiate a delete / complete
         _deleteOnDragRelease = self.frame.origin.x < -self.frame.size.width / 2;
         _markDoneOnDragRelease = self.frame.origin.x > self.frame.size.width / 2;
-        NSLog(@"%f",self.frame.origin.x);
-        NSLog(@"%f",self.frame.size.width/2);
-        NSLog(@"+++++++");
     }
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
@@ -102,13 +87,10 @@
         
         if (_deleteOnDragRelease) {
             [self.delegate deleteItem:self.todoItem];
-            
-            int a = 8;
         }
         if (_markDoneOnDragRelease) {
             // mark the item as complete and update the UI state
-            self.todoItem.completed = YES;
-            NSLog(@"GREEN");
+            self.todoItem.completed = 0;
             //self.textLabel.backgroundColor = [UIColor greenColor];
             UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             alert.alertViewStyle = UIAlertViewStylePlainTextInput;
@@ -117,9 +99,12 @@
         }
     }
 }
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    //TODO: here add new item with CORE DATA
-//    NSLog(@"%@", [[alertView textFieldAtIndex:0] text]);
-//}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString* input = [[alertView textFieldAtIndex:0] text];
+    
+    ToDoItem* item = [[ToDoItem alloc] initWithContent:input];
+    [self.delegate addItem:item];
+}
 
 @end
