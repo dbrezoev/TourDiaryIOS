@@ -13,7 +13,6 @@
 -(id)initWithContent:(NSString*)content {
     if (self = [super init]) {
         self.content = content;
-        self.completed = @0;
     }
     return self;
 }
