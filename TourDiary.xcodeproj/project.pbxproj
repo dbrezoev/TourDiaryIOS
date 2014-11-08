@@ -26,8 +26,9 @@
 		323633911A0C1A4E00A91E80 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3236338E1A0C1A4E00A91E80 /* ParseFacebookUtils.framework */; };
 		323633931A0C1A6600A91E80 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 323633921A0C1A6600A91E80 /* Images.xcassets */; };
 		323633951A0C1A9200A91E80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323633941A0C1A9200A91E80 /* Info.plist */; };
+		3236CF161A0E353E0043967E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236CF151A0E353E0043967E /* InfoViewController.m */; };
+		323ED9C31A0E435F000F4787 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 323ED9C21A0E435F000F4787 /* ListItem.m */; };
 		8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */; };
-		8416EB331A0A6EE500CB2492 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416EB321A0A6EE500CB2492 /* ListItem.m */; };
 		841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */; };
 		841B60DB1A0A2C7E00C2EFF3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */; };
 		84954B261A056B840091E43E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B251A056B840091E43E /* main.m */; };
@@ -75,9 +76,11 @@
 		3236338E1A0C1A4E00A91E80 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		323633921A0C1A6600A91E80 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		323633941A0C1A9200A91E80 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3236CF141A0E353E0043967E /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		3236CF151A0E353E0043967E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		323ED9C11A0E435F000F4787 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListItem.h; path = TourDiary/ListItem.h; sourceTree = "<group>"; };
+		323ED9C21A0E435F000F4787 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListItem.m; path = TourDiary/ListItem.m; sourceTree = "<group>"; };
 		8416EB281A0A641C00CB2492 /* ListItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListItem.xcdatamodel; sourceTree = "<group>"; };
-		8416EB311A0A6EE500CB2492 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
-		8416EB321A0A6EE500CB2492 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 		841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataHelper.h; path = TourDiary/CoreDataHelper.h; sourceTree = "<group>"; };
 		841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataHelper.m; path = TourDiary/CoreDataHelper.m; sourceTree = "<group>"; };
 		841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -139,8 +142,8 @@
 		8416EB2D1A0A655800CB2492 /* CoreDataHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				8416EB311A0A6EE500CB2492 /* ListItem.h */,
-				8416EB321A0A6EE500CB2492 /* ListItem.m */,
+				323ED9C11A0E435F000F4787 /* ListItem.h */,
+				323ED9C21A0E435F000F4787 /* ListItem.m */,
 				8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */,
 				841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */,
 				841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */,
@@ -236,6 +239,8 @@
 		8497F3381A0D7E9A0084644A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3236CF141A0E353E0043967E /* InfoViewController.h */,
+				3236CF151A0E353E0043967E /* InfoViewController.m */,
 				84954B2A1A056B840091E43E /* ToDoViewController.h */,
 				84954B2B1A056B840091E43E /* ToDoViewController.m */,
 				3236336B1A0C192500A91E80 /* LandmarkViewController.h */,
@@ -374,7 +379,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8497F3371A0D32EF0084644A /* UpdateToDoViewController.m in Sources */,
-				8416EB331A0A6EE500CB2492 /* ListItem.m in Sources */,
 				841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */,
 				84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */,
 				84954B291A056B840091E43E /* AppDelegate.m in Sources */,
@@ -384,7 +388,9 @@
 				84A9E1F91A0B939A001C6870 /* CreateToDoViewController.m in Sources */,
 				849EA2B71A069A8000BB0C56 /* CustomTableViewCell.m in Sources */,
 				8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */,
+				323ED9C31A0E435F000F4787 /* ListItem.m in Sources */,
 				3236336D1A0C192500A91E80 /* LandmarkItem.m in Sources */,
+				3236CF161A0E353E0043967E /* InfoViewController.m in Sources */,
 				84954B261A056B840091E43E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

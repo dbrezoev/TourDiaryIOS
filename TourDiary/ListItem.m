@@ -2,7 +2,7 @@
 //  ListItem.m
 //  TourDiary
 //
-//  Created by admin on 11/5/14.
+//  Created by plamen on 11/8/14.
 //  Copyright (c) 2014 brezoev. All rights reserved.
 //
 
@@ -11,7 +11,9 @@
 
 @implementation ListItem
 
-@dynamic content;
 @dynamic completed;
+@dynamic content;
+@dynamic dateCreated;
+@dynamic itemId;
 
 @end

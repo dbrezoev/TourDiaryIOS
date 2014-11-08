@@ -29,7 +29,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     _toDoItems = [NSMutableArray array];
     _cdHelper = [[CoreDataHelper alloc] init];
     [_cdHelper setupCoreData];
-
+    
     // Set the view as datasource
     self.tableView.dataSource = self;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -104,9 +104,9 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 
 -(void)deleteItem:(ListItem*)todoItem {
     
-        [_cdHelper.context deleteObject:todoItem];
-        [self.cdHelper saveContext];
-        [self updateUI];
+    [_cdHelper.context deleteObject:todoItem];
+    [self.cdHelper saveContext];
+    [self updateUI];
     
     float delay = 0.0;
     

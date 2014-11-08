@@ -24,11 +24,13 @@ static NSString *cellIndentifier = @"cellIndentifierr";
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
+                NSString *itemId = [object objectId];
                 NSString *text = object[@"LandmarkName"];
                 NSString *cityName = object[@"City"];
                 PFFile *imageFile = object[@"LandmarkPicture"];
                 NSData *imageData = [imageFile getData];
                 LandmarkItem *landmarkItem = [[LandmarkItem alloc] initLandmark:imageData withLabel:text withCity:cityName];
+                landmarkItem.itemId = itemId;
                 [_landmarkItems addObject:landmarkItem];
             }
             
@@ -41,6 +43,8 @@ static NSString *cellIndentifier = @"cellIndentifierr";
     }];
     
     self.landmarkTableView.dataSource = self;
+    self.landmarkTableView.delegate = self;
+    self.landmarkTableView.allowsSelectionDuringEditing = true;
     [self.landmarkTableView registerNib:[UINib nibWithNibName:@"LandmarkTableViewCell" bundle:nil] forCellReuseIdentifier:cellIndentifier];
 }
 
@@ -69,21 +73,31 @@ static NSString *cellIndentifier = @"cellIndentifierr";
     
     UIImage *image = [UIImage imageWithData:landmarkItem.imageData];
     [cell.landmarkImage setImage:image];
-     cell.landmarkName.text = landmarkItem.landmarkLabel;
-     cell.landmarkCity.text = landmarkItem.landmarkCity;
+    cell.landmarkName.text = landmarkItem.landmarkLabel;
+    cell.landmarkCity.text = landmarkItem.landmarkCity;
     
     return cell;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"toInfoViewSegue"])
+    {
+        NSIndexPath *indexPath = (NSIndexPath *) sender;
+        LandmarkItem *landmarkItem = [_landmarkItems objectAtIndex:[indexPath row]];
+        InfoViewController *infoController = segue.destinationViewController;
+        infoController.landmarkItem = landmarkItem;
+    }
+}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Section: Row: selected and its data is");
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"toInfoViewSegue" sender:indexPath];
+    
+}
 
 @end

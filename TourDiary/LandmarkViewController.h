@@ -11,8 +11,10 @@
 #import "TableViewCellDelegate.h"
 #import "LandmarkItem.h"
 #import "LandmarkViewCell.h"
+#import "InfoViewController.h"
 
-@interface LandmarkViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LandmarkViewController : UIViewController<UITableViewDataSource,
+UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *landmarkTableView;
 

@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *landmarkImage;
 @property (weak, nonatomic) IBOutlet UILabel *landmarkName;
 @property (weak, nonatomic) IBOutlet UILabel *landmarkCity;
+@property NSInteger cellIndex;
 
 @end

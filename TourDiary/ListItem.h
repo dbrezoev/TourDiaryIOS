@@ -2,7 +2,7 @@
 //  ListItem.h
 //  TourDiary
 //
-//  Created by admin on 11/5/14.
+//  Created by plamen on 11/8/14.
 //  Copyright (c) 2014 brezoev. All rights reserved.
 //
 
@@ -12,7 +12,9 @@
 
 @interface ListItem : NSManagedObject
 
-@property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSNumber * completed;
+@property (nonatomic, retain) NSString * content;
+@property (nonatomic, retain) NSDate * dateCreated;
+@property (nonatomic, retain) NSString * itemId;
 
 @end
