@@ -34,14 +34,13 @@
     return self;
 }
 
-#pragma mark - GestureHandling
+#pragma mark - GesturesHandling
 -(void)handleDoubleTap:(UITapGestureRecognizer*)sender{
-    NSLog(@"Double tapped");
-    [self.delegate update:self.todoItem];
+    NSLog(@"DOUBLE TAPPPPPPPPPPPPPPPPPPPPP");
+    [self.updater update:self.todoItem];
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
-    NSLog(@"handle pan");
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         // if the gesture has just started, record the current centre location
@@ -90,18 +89,27 @@
     }
     else if (sender.state == UIGestureRecognizerStateBegan){
         NSLog(@"UIGestureRecognizerStateBegan.");
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//        [alert show];
+        
+        
+        NSDateFormatter *gmtFormatter=[[NSDateFormatter alloc] init];
+        [gmtFormatter setDateFormat:@"dd MMMM yyyy HH:mm:ss"];
+        NSString *gmtDateTime=[gmtFormatter stringFromDate:self.todoItem.dateCreated];
+
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Note info" message:[NSString stringWithFormat:@"This note was created on:\n %@", gmtDateTime]  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        alert.alertViewStyle = UIAlertViewStyleDefault;
         [alert show];
     }
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSString* input = [[alertView textFieldAtIndex:0] text];
-    
-    ToDoItem* item = [[ToDoItem alloc] initWithContent:input];
-    [self.delegate addItem:item];
-}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    NSString* input = [[alertView textFieldAtIndex:0] text];
+//    
+//    ToDoItem* item = [[ToDoItem alloc] initWithContent:input];
+//    [self.delegate addItem:item];
+//}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {

@@ -7,6 +7,8 @@
 //
 
 #import "ToDoViewController.h"
+#import "CreateToDoViewController.h"
+#import "UpdateToDoViewController.h"
 #import "ToDoItem.h"
 #import "CustomTableViewCell.h"
 #import "CoreDataHelper.h"
@@ -26,6 +28,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    NSLog(@"%@", self.landmarkItem.itemId);
     _toDoItems = [NSMutableArray array];
     _cdHelper = [[CoreDataHelper alloc] init];
     [_cdHelper setupCoreData];
@@ -44,7 +47,6 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 
 #pragma mark - UITableViewDataSource protocol methods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return fetched.count;
 }
 
@@ -77,17 +79,30 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 -(UIColor*)colorForIndex:(NSInteger) index {
     //TODO: Change the colors to look better
     if(index % 2 == 0){
-        return [UIColor colorWithRed: 1.0 green:0.5 blue: 0.0 alpha:1.0];
+        return [UIColor colorWithRed: 0.690 green: 0.769 blue: 0.871 alpha:1.0];
     }
     else{
-        return [UIColor colorWithRed: 0.0 green:0.5 blue: 1.0 alpha:1.0];
+        return [UIColor colorWithRed: 0.255 green:0.412 blue: 0.882 alpha:1.0];
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"createTodo"])
+    {
+        CreateToDoViewController *viewControllerToGo = [segue destinationViewController];
+        viewControllerToGo.landmarkItem = self.landmarkItem;
+    }
+//    else if([[segue identifier] isEqualToString:@"UpdateIdentifier"]){
+//        UpdateToDoViewController* updateController = [segue destinationViewController];
+//        updateController.listItem = self.
+//    }
 }
 
 #pragma mark - CoreData CRUD operations
 -(void)update:(ListItem*) item{
-    [self performSegueWithIdentifier:@"UpdateIdentifier" sender:self];
-    NSLog(@"%@",item.content);
+    
+//    [self performSegueWithIdentifier:@"UpdateIdentifier" sender:self];
+//    NSLog(@"%@",item.content);
 }
 
 -(void) addItem:(ToDoItem*)todoItem{
@@ -95,6 +110,8 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     [NSEntityDescription insertNewObjectForEntityForName:@"ListItem" inManagedObjectContext:_cdHelper.context];
     
     itemToAdd.content = todoItem.content;
+    itemToAdd.itemId = self.landmarkItem.itemId;
+    itemToAdd.dateCreated = [NSDate date];
     
     [self.cdHelper.context insertObject:itemToAdd];
     [self.cdHelper saveContext];
@@ -141,8 +158,16 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 }
 
 -(void) updateUI{
+    NSString* itemId = self.landmarkItem.itemId;
+    
     NSFetchRequest* request =
     [NSFetchRequest fetchRequestWithEntityName:@"ListItem"];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"itemId = %@", itemId];
+    [request setPredicate:predicate];
     fetched = [[_cdHelper.context executeFetchRequest:request error:nil]mutableCopy];
+}
+
+- (IBAction)backButton:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

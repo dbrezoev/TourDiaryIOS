@@ -22,18 +22,6 @@
     [_cdHelper setupCoreData];
 }
 
-//-(void)saveTodo:(UIButton *)sender{
-//    ListItem* itemToAdd =
-//    [NSEntityDescription insertNewObjectForEntityForName:@"ListItem" inManagedObjectContext:_cdHelper.context];
-//    
-//    itemToAdd.content = self.userInput.text;
-//    
-//    [self.cdHelper.context insertObject:itemToAdd];
-//    [self.cdHelper saveContext];
-//    [self.cdHelper saveContext];
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-
 - (IBAction)save:(UIButton *)sender {
  
     ListItem* itemToAdd =
@@ -41,6 +29,8 @@
     
     NSString* userInputText = self.userInput.text;
     itemToAdd.content = userInputText;
+    itemToAdd.dateCreated = [NSDate date];
+    itemToAdd.itemId = self.landmarkItem.itemId;
     
     if (userInputText && userInputText.length) {
         [self.cdHelper.context insertObject:itemToAdd];

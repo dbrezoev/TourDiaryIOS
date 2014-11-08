@@ -18,6 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="frQ-KC-9ap">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXB-Co-BY4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="12" width="35" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="backButton:" destination="SbI-8X-Anf" eventType="touchUpInside" id="M9h-gH-J6X"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVd-3T-IMH">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal">
@@ -27,10 +43,6 @@
                                     <segue destination="2St-tb-8ZS" kind="show" identifier="createTodo" id="LF1-KJ-CTE"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="frQ-KC-9ap">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -51,8 +63,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="rVd-3T-IMH"/>
                                 <exclude reference="frQ-KC-9ap"/>
+                                <exclude reference="kXB-Co-BY4"/>
+                                <exclude reference="rVd-3T-IMH"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8Z3-ZY-ken"/>
@@ -72,8 +85,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="rVd-3T-IMH"/>
                                 <include reference="frQ-KC-9ap"/>
+                                <include reference="kXB-Co-BY4"/>
+                                <include reference="rVd-3T-IMH"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8Z3-ZY-ken"/>
@@ -102,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDe-1a-FPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745.5" y="632"/>
+            <point key="canvasLocation" x="625.5" y="948"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="Mdf-Pr-EP2">
@@ -180,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m05-oy-Gfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1804" y="-75"/>
+            <point key="canvasLocation" x="1293" y="-143"/>
         </scene>
         <!--Create To Do View Controller-->
         <scene sceneID="ED3-ge-hwn">
@@ -249,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3S9-VM-F2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413" y="637"/>
+            <point key="canvasLocation" x="1665" y="583"/>
         </scene>
         <!--Update To Do View Controller-->
         <scene sceneID="H75-fG-hXh">
@@ -318,7 +332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1S-V7-0Qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458" y="833"/>
+            <point key="canvasLocation" x="1665" y="1233"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Jrw-pO-WRN">
@@ -379,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGN-G6-a8J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-62"/>
+            <point key="canvasLocation" x="546" y="-150"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="P6R-tf-RtA">
@@ -398,7 +412,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e03-z4-Qwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.5" y="270"/>
+            <point key="canvasLocation" x="-219" y="152"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

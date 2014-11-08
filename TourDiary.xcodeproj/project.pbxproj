@@ -80,6 +80,7 @@
 		3236CF151A0E353E0043967E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		323ED9C11A0E435F000F4787 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListItem.h; path = TourDiary/ListItem.h; sourceTree = "<group>"; };
 		323ED9C21A0E435F000F4787 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListItem.m; path = TourDiary/ListItem.m; sourceTree = "<group>"; };
+		8402EAF91A0E87D100D20B0D /* Updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
 		8416EB281A0A641C00CB2492 /* ListItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListItem.xcdatamodel; sourceTree = "<group>"; };
 		841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataHelper.h; path = TourDiary/CoreDataHelper.h; sourceTree = "<group>"; };
 		841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataHelper.m; path = TourDiary/CoreDataHelper.m; sourceTree = "<group>"; };
@@ -139,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8402EAFA1A0E87DB00D20B0D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */,
+				8402EAF91A0E87D100D20B0D /* Updater.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		8416EB2D1A0A655800CB2492 /* CoreDataHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,12 +205,12 @@
 		84954B221A056B840091E43E /* TourDiary */ = {
 			isa = PBXGroup;
 			children = (
+				8402EAFA1A0E87DB00D20B0D /* Protocols */,
 				8497F33A1A0D7EF20084644A /* Views */,
 				8497F3391A0D7ECD0084644A /* Models */,
 				8497F3381A0D7E9A0084644A /* Controllers */,
 				323633941A0C1A9200A91E80 /* Info.plist */,
 				323633921A0C1A6600A91E80 /* Images.xcassets */,
-				849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */,
 				84954B271A056B840091E43E /* AppDelegate.h */,
 				84954B281A056B840091E43E /* AppDelegate.m */,
 				84954B2D1A056B840091E43E /* Main.storyboard */,
