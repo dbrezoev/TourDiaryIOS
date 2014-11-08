@@ -14,7 +14,6 @@
 
 @interface ToDoViewController ()
 @property(nonatomic, strong) CoreDataHelper* cdHelper;
-
 @end
 
 @implementation ToDoViewController{
@@ -32,10 +31,8 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     [_cdHelper setupCoreData];
 
     // Set the view as datasource
-    NSLog(@"View did load");
     self.tableView.dataSource = self;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"cell"];
-    
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor blackColor];
@@ -45,24 +42,6 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     [self updateUI];
 }
 
--(void) updateUI{
-    NSFetchRequest* request =
-    [NSFetchRequest fetchRequestWithEntityName:@"ListItem"];
-    fetched = [[_cdHelper.context executeFetchRequest:request error:nil]mutableCopy];
-}
-
--(void) addItem:(ToDoItem*)todoItem{
-    ListItem* itemToAdd =
-    [NSEntityDescription insertNewObjectForEntityForName:@"ListItem" inManagedObjectContext:_cdHelper.context];
-    
-    itemToAdd.content = todoItem.content;
-    
-    [self.cdHelper.context insertObject:itemToAdd];
-    [self.cdHelper saveContext];
-    [self updateUI];
-    NSLog(@"List item: %@ added successfully", todoItem.content);
-}
-
 #pragma mark - UITableViewDataSource protocol methods
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -70,15 +49,12 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     NSString *identifier = @"cell";
     
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     
     ListItem *item = fetched[[indexPath row]];
     cell.textLabel.text = item.content;
-    NSLog(@"row for index path");
-    
     cell.delegate = self;
     cell.todoItem = item;
     return cell;
@@ -106,6 +82,24 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     else{
         return [UIColor colorWithRed: 0.0 green:0.5 blue: 1.0 alpha:1.0];
     }
+}
+
+#pragma mark - CoreData CRUD operations
+-(void)update:(ListItem*) item{
+    [self performSegueWithIdentifier:@"UpdateIdentifier" sender:self];
+    NSLog(@"%@",item.content);
+}
+
+-(void) addItem:(ToDoItem*)todoItem{
+    ListItem* itemToAdd =
+    [NSEntityDescription insertNewObjectForEntityForName:@"ListItem" inManagedObjectContext:_cdHelper.context];
+    
+    itemToAdd.content = todoItem.content;
+    
+    [self.cdHelper.context insertObject:itemToAdd];
+    [self.cdHelper saveContext];
+    [self updateUI];
+    NSLog(@"List item: %@ added successfully", todoItem.content);
 }
 
 -(void)deleteItem:(ListItem*)todoItem {
@@ -145,6 +139,10 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
         }
     }
 }
-//- (IBAction)createToDo:(UIButton *)sender {
-//}
+
+-(void) updateUI{
+    NSFetchRequest* request =
+    [NSFetchRequest fetchRequestWithEntityName:@"ListItem"];
+    fetched = [[_cdHelper.context executeFetchRequest:request error:nil]mutableCopy];
+}
 @end

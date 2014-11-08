@@ -15,7 +15,6 @@
 }
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    NSLog(@"init custom table view");
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         
@@ -25,34 +24,20 @@
         
         UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
         recognizerL.minimumPressDuration = 2.0f;
-        //        //recognizerL.delegate = self;
         [self addGestureRecognizer:recognizerL];
+        
+        UITapGestureRecognizer* doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
+        doubleTapGestureRecognizer.numberOfTapsRequired = 2;
+        [self addGestureRecognizer:doubleTapGestureRecognizer];
     }
     
     return self;
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    return YES;
-}
-
--(void)handleLongPress:(UILongPressGestureRecognizer*)sender{
-    NSLog(@"long press");
-    if (sender.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
-        //Do Whatever You want on End of Gesture
-    }
-    else if (sender.state == UIGestureRecognizerStateBegan){
-        NSLog(@"UIGestureRecognizerStateBegan.");
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-                [alert show];
-    }
-}
-
-- (void)awakeFromNib {
-    // Initialization code
+#pragma mark - GestureHandling
+-(void)handleDoubleTap:(UITapGestureRecognizer*)sender{
+    NSLog(@"Double tapped");
+    [self.delegate update:self.todoItem];
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
@@ -89,7 +74,6 @@
             [self.delegate deleteItem:self.todoItem];
         }
         if (_markDoneOnDragRelease) {
-            // mark the item as complete and update the UI state
             self.todoItem.completed = 0;
             //self.textLabel.backgroundColor = [UIColor greenColor];
             UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -100,11 +84,28 @@
     }
 }
 
+-(void)handleLongPress:(UILongPressGestureRecognizer*)sender{
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"UIGestureRecognizerStateEnded");
+    }
+    else if (sender.state == UIGestureRecognizerStateBegan){
+        NSLog(@"UIGestureRecognizerStateBegan.");
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert show];
+    }
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     NSString* input = [[alertView textFieldAtIndex:0] text];
     
     ToDoItem* item = [[ToDoItem alloc] initWithContent:input];
     [self.delegate addItem:item];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 
 @end

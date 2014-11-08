@@ -13,4 +13,5 @@
 @protocol TableViewCellDelegate <NSObject>
 -(void) deleteItem:(ListItem*)todoItem;
 -(void) addItem:(ToDoItem*)todoItem;
+-(void) update:(ListItem*)todoItem;
 @end

@@ -10,12 +10,14 @@
 
 @implementation LandmarkViewController{
     NSMutableArray *_landmarkItems;
+    UIActivityIndicatorView *spinner;
 }
 
 static NSString *cellIndentifier = @"cellIndentifierr";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadSpinner];
     PFQuery *query = [PFQuery queryWithClassName:@"LandmarkInfo"];
     _landmarkItems = [[NSMutableArray alloc] init];
     
@@ -35,10 +37,18 @@ static NSString *cellIndentifier = @"cellIndentifierr";
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
+        [spinner stopAnimating];
     }];
     
     self.landmarkTableView.dataSource = self;
     [self.landmarkTableView registerNib:[UINib nibWithNibName:@"LandmarkTableViewCell" bundle:nil] forCellReuseIdentifier:cellIndentifier];
+}
+
+-(void) loadSpinner {
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.center = CGPointMake((self.view.frame.size.width / 2), self.view.frame.size.height/2);
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -36,6 +36,7 @@
 		84954B2F1A056B840091E43E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84954B2D1A056B840091E43E /* Main.storyboard */; };
 		84954B341A056B840091E43E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84954B321A056B840091E43E /* LaunchScreen.xib */; };
 		84954B401A056B850091E43E /* TourDiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B3F1A056B850091E43E /* TourDiaryTests.m */; };
+		8497F3371A0D32EF0084644A /* UpdateToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497F3361A0D32EF0084644A /* UpdateToDoViewController.m */; };
 		849968171A06331300CFA2F3 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 849968161A06331300CFA2F3 /* ToDoItem.m */; };
 		849EA2B71A069A8000BB0C56 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */; };
 		84A9E1F91A0B939A001C6870 /* CreateToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */; };
@@ -92,6 +93,8 @@
 		84954B391A056B840091E43E /* TourDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TourDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84954B3E1A056B850091E43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84954B3F1A056B850091E43E /* TourDiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TourDiaryTests.m; sourceTree = "<group>"; };
+		8497F3351A0D32EF0084644A /* UpdateToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateToDoViewController.h; sourceTree = "<group>"; };
+		8497F3361A0D32EF0084644A /* UpdateToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateToDoViewController.m; sourceTree = "<group>"; };
 		849968151A06331300CFA2F3 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
 		849968161A06331300CFA2F3 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
 		849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
@@ -133,7 +136,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8416EB2D1A0A655800CB2492 /* DBHelpers */ = {
+		8416EB2D1A0A655800CB2492 /* CoreDataHelpers */ = {
 			isa = PBXGroup;
 			children = (
 				8416EB311A0A6EE500CB2492 /* ListItem.h */,
@@ -142,7 +145,7 @@
 				841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */,
 				841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */,
 			);
-			name = DBHelpers;
+			name = CoreDataHelpers;
 			sourceTree = "<group>";
 		};
 		841B60DC1A0A2C8900C2EFF3 /* Frameworks */ = {
@@ -169,7 +172,7 @@
 		84954B171A056B840091E43E = {
 			isa = PBXGroup;
 			children = (
-				8416EB2D1A0A655800CB2492 /* DBHelpers */,
+				8416EB2D1A0A655800CB2492 /* CoreDataHelpers */,
 				84954B221A056B840091E43E /* TourDiary */,
 				84954B3C1A056B850091E43E /* TourDiaryTests */,
 				84954B211A056B840091E43E /* Products */,
@@ -189,27 +192,15 @@
 		84954B221A056B840091E43E /* TourDiary */ = {
 			isa = PBXGroup;
 			children = (
+				8497F33A1A0D7EF20084644A /* Views */,
+				8497F3391A0D7ECD0084644A /* Models */,
+				8497F3381A0D7E9A0084644A /* Controllers */,
 				323633941A0C1A9200A91E80 /* Info.plist */,
 				323633921A0C1A6600A91E80 /* Images.xcassets */,
-				323633661A0C192500A91E80 /* LandmarkItem.h */,
-				323633671A0C192500A91E80 /* LandmarkItem.m */,
-				323633681A0C192500A91E80 /* LandmarkTableViewCell.xib */,
-				323633691A0C192500A91E80 /* LandmarkViewCell.h */,
-				3236336A1A0C192500A91E80 /* LandmarkViewCell.m */,
-				3236336B1A0C192500A91E80 /* LandmarkViewController.h */,
-				3236336C1A0C192500A91E80 /* LandmarkViewController.m */,
-				84A9E1F71A0B939A001C6870 /* CreateToDoViewController.h */,
-				84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */,
-				849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */,
-				849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */,
 				849EA2B81A06A19800BB0C56 /* TableViewCellDelegate.h */,
 				84954B271A056B840091E43E /* AppDelegate.h */,
 				84954B281A056B840091E43E /* AppDelegate.m */,
-				84954B2A1A056B840091E43E /* ToDoViewController.h */,
-				84954B2B1A056B840091E43E /* ToDoViewController.m */,
 				84954B2D1A056B840091E43E /* Main.storyboard */,
-				849968151A06331300CFA2F3 /* ToDoItem.h */,
-				849968161A06331300CFA2F3 /* ToDoItem.m */,
 				84954B321A056B840091E43E /* LaunchScreen.xib */,
 				84954B231A056B840091E43E /* Supporting Files */,
 			);
@@ -240,6 +231,44 @@
 				84954B3E1A056B850091E43E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8497F3381A0D7E9A0084644A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84954B2A1A056B840091E43E /* ToDoViewController.h */,
+				84954B2B1A056B840091E43E /* ToDoViewController.m */,
+				3236336B1A0C192500A91E80 /* LandmarkViewController.h */,
+				3236336C1A0C192500A91E80 /* LandmarkViewController.m */,
+				84A9E1F71A0B939A001C6870 /* CreateToDoViewController.h */,
+				84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */,
+				8497F3351A0D32EF0084644A /* UpdateToDoViewController.h */,
+				8497F3361A0D32EF0084644A /* UpdateToDoViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8497F3391A0D7ECD0084644A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				849968151A06331300CFA2F3 /* ToDoItem.h */,
+				849968161A06331300CFA2F3 /* ToDoItem.m */,
+				323633661A0C192500A91E80 /* LandmarkItem.h */,
+				323633671A0C192500A91E80 /* LandmarkItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8497F33A1A0D7EF20084644A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				323633681A0C192500A91E80 /* LandmarkTableViewCell.xib */,
+				323633691A0C192500A91E80 /* LandmarkViewCell.h */,
+				3236336A1A0C192500A91E80 /* LandmarkViewCell.m */,
+				849EA2B51A069A8000BB0C56 /* CustomTableViewCell.h */,
+				849EA2B61A069A8000BB0C56 /* CustomTableViewCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8497F3371A0D32EF0084644A /* UpdateToDoViewController.m in Sources */,
 				8416EB331A0A6EE500CB2492 /* ListItem.m in Sources */,
 				841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */,
 				84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */,
