@@ -28,6 +28,9 @@
 		323633951A0C1A9200A91E80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323633941A0C1A9200A91E80 /* Info.plist */; };
 		3236CF161A0E353E0043967E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236CF151A0E353E0043967E /* InfoViewController.m */; };
 		323ED9C31A0E435F000F4787 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 323ED9C21A0E435F000F4787 /* ListItem.m */; };
+		32E85ED41A0F9F0900B9F034 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E85ED31A0F9F0900B9F034 /* ToastView.m */; };
+		32E85ED71A0F9F1C00B9F034 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E85ED61A0F9F1C00B9F034 /* AudioController.m */; };
+		32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E85EDA1A0F9FC500B9F034 /* LaunchScreen.xib */; };
 		8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */; };
 		841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */; };
 		841B60DB1A0A2C7E00C2EFF3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */; };
@@ -35,7 +38,6 @@
 		84954B291A056B840091E43E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B281A056B840091E43E /* AppDelegate.m */; };
 		84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B2B1A056B840091E43E /* ToDoViewController.m */; };
 		84954B2F1A056B840091E43E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84954B2D1A056B840091E43E /* Main.storyboard */; };
-		84954B341A056B840091E43E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84954B321A056B840091E43E /* LaunchScreen.xib */; };
 		84954B401A056B850091E43E /* TourDiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B3F1A056B850091E43E /* TourDiaryTests.m */; };
 		8497F3371A0D32EF0084644A /* UpdateToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8497F3361A0D32EF0084644A /* UpdateToDoViewController.m */; };
 		849968171A06331300CFA2F3 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 849968161A06331300CFA2F3 /* ToDoItem.m */; };
@@ -80,6 +82,11 @@
 		3236CF151A0E353E0043967E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		323ED9C11A0E435F000F4787 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListItem.h; path = TourDiary/ListItem.h; sourceTree = "<group>"; };
 		323ED9C21A0E435F000F4787 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListItem.m; path = TourDiary/ListItem.m; sourceTree = "<group>"; };
+		32E85ED21A0F9F0900B9F034 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
+		32E85ED31A0F9F0900B9F034 /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
+		32E85ED51A0F9F1C00B9F034 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
+		32E85ED61A0F9F1C00B9F034 /* AudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioController.m; sourceTree = "<group>"; };
+		32E85EDB1A0F9FC500B9F034 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8402EAF91A0E87D100D20B0D /* Updater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Updater.h; sourceTree = "<group>"; };
 		8416EB281A0A641C00CB2492 /* ListItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListItem.xcdatamodel; sourceTree = "<group>"; };
 		841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataHelper.h; path = TourDiary/CoreDataHelper.h; sourceTree = "<group>"; };
@@ -93,7 +100,6 @@
 		84954B2A1A056B840091E43E /* ToDoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
 		84954B2B1A056B840091E43E /* ToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
 		84954B2E1A056B840091E43E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84954B331A056B840091E43E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		84954B391A056B840091E43E /* TourDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TourDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84954B3E1A056B850091E43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84954B3F1A056B850091E43E /* TourDiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TourDiaryTests.m; sourceTree = "<group>"; };
@@ -205,6 +211,11 @@
 		84954B221A056B840091E43E /* TourDiary */ = {
 			isa = PBXGroup;
 			children = (
+				32E85EDA1A0F9FC500B9F034 /* LaunchScreen.xib */,
+				32E85ED51A0F9F1C00B9F034 /* AudioController.h */,
+				32E85ED61A0F9F1C00B9F034 /* AudioController.m */,
+				32E85ED21A0F9F0900B9F034 /* ToastView.h */,
+				32E85ED31A0F9F0900B9F034 /* ToastView.m */,
 				8402EAFA1A0E87DB00D20B0D /* Protocols */,
 				8497F33A1A0D7EF20084644A /* Views */,
 				8497F3391A0D7ECD0084644A /* Models */,
@@ -214,7 +225,6 @@
 				84954B271A056B840091E43E /* AppDelegate.h */,
 				84954B281A056B840091E43E /* AppDelegate.m */,
 				84954B2D1A056B840091E43E /* Main.storyboard */,
-				84954B321A056B840091E43E /* LaunchScreen.xib */,
 				84954B231A056B840091E43E /* Supporting Files */,
 			);
 			path = TourDiary;
@@ -368,8 +378,8 @@
 			files = (
 				84954B2F1A056B840091E43E /* Main.storyboard in Resources */,
 				323633931A0C1A6600A91E80 /* Images.xcassets in Resources */,
-				84954B341A056B840091E43E /* LaunchScreen.xib in Resources */,
 				323633951A0C1A9200A91E80 /* Info.plist in Resources */,
+				32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */,
 				3236336E1A0C192500A91E80 /* LandmarkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,8 +400,10 @@
 			files = (
 				8497F3371A0D32EF0084644A /* UpdateToDoViewController.m in Sources */,
 				841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */,
+				32E85ED71A0F9F1C00B9F034 /* AudioController.m in Sources */,
 				84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */,
 				84954B291A056B840091E43E /* AppDelegate.m in Sources */,
+				32E85ED41A0F9F0900B9F034 /* ToastView.m in Sources */,
 				323633701A0C192500A91E80 /* LandmarkViewController.m in Sources */,
 				3236336F1A0C192500A91E80 /* LandmarkViewCell.m in Sources */,
 				849968171A06331300CFA2F3 /* ToDoItem.m in Sources */,
@@ -424,20 +436,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		32E85EDA1A0F9FC500B9F034 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32E85EDB1A0F9FC500B9F034 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
 		84954B2D1A056B840091E43E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				84954B2E1A056B840091E43E /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		84954B321A056B840091E43E /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				84954B331A056B840091E43E /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

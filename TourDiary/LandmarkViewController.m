@@ -18,9 +18,8 @@ static NSString *cellIndentifier = @"cellIndentifierr";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadSpinner];
-    PFQuery *query = [PFQuery queryWithClassName:@"LandmarkInfo"];
     _landmarkItems = [[NSMutableArray alloc] init];
-    
+    PFQuery *query = [PFQuery queryWithClassName:@"LandmarkInfo"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for (PFObject *object in objects) {
@@ -28,9 +27,11 @@ static NSString *cellIndentifier = @"cellIndentifierr";
                 NSString *text = object[@"LandmarkName"];
                 NSString *cityName = object[@"City"];
                 PFFile *imageFile = object[@"LandmarkPicture"];
+                PFGeoPoint *userGeoPoint = object[@"GeoLocation"];
                 NSData *imageData = [imageFile getData];
                 LandmarkItem *landmarkItem = [[LandmarkItem alloc] initLandmark:imageData withLabel:text withCity:cityName];
                 landmarkItem.itemId = itemId;
+                landmarkItem.geoPoint = CLLocationCoordinate2DMake(userGeoPoint.latitude, userGeoPoint.longitude);
                 [_landmarkItems addObject:landmarkItem];
             }
             
@@ -89,6 +90,10 @@ static NSString *cellIndentifier = @"cellIndentifierr";
         InfoViewController *infoController = segue.destinationViewController;
         infoController.landmarkItem = landmarkItem;
     }
+}
+
+-(IBAction)returnToLandmarkController:(UIStoryboardSegue *) segue{
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
