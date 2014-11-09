@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TourDiary/CustomTableViewCell.m"
-            timestampString = "437161663.554043"
+            timestampString = "437235906.626219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-handleDoubleTap:"
             landmarkType = "5">
          </BreakpointContent>

@@ -12,11 +12,20 @@
     CGPoint _originalCenter;
     BOOL _deleteOnDragRelease;
     BOOL _markDoneOnDragRelease;
+    UILabel* _deleteLabel;
 }
+
+const float DELETE_LABEL_MARGIN = 10.0f;
+const float DELETE_LABEL_WIDTH = 50.0f;
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
+        
+        _deleteLabel = [self createLabel];
+        _deleteLabel.text = @"\u2717";
+        _deleteLabel.textAlignment = NSTextAlignmentLeft;
+        [self addSubview:_deleteLabel];
         
         UIPanGestureRecognizer* recognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
         recognizer.delegate = self;
@@ -32,6 +41,21 @@
     }
     
     return self;
+}
+
+-(UILabel*) createLabel {
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectNull];
+    label.textColor = [UIColor whiteColor];
+    label.font = [UIFont boldSystemFontOfSize:32.0];
+    label.backgroundColor = [UIColor clearColor];
+    return label;
+}
+
+-(void)layoutSubviews{
+    
+    [super layoutSubviews];
+    _deleteLabel.frame = CGRectMake(self.bounds.size.width + DELETE_LABEL_MARGIN, 0,
+                                    DELETE_LABEL_WIDTH, self.bounds.size.height);
 }
 
 #pragma mark - GesturesHandling
@@ -54,6 +78,11 @@
         // determine whether the item has been dragged far enough to initiate a delete / complete
         _deleteOnDragRelease = self.frame.origin.x < -self.frame.size.width / 2;
         _markDoneOnDragRelease = self.frame.origin.x > self.frame.size.width / 2;
+        
+        float cueAlpha = fabsf(self.frame.origin.x) / (self.frame.size.width / 2);
+        _deleteLabel.alpha = cueAlpha;
+        _deleteLabel.textColor = _deleteOnDragRelease ?
+        [UIColor redColor] : [UIColor whiteColor];
     }
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {

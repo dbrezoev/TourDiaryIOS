@@ -34,6 +34,8 @@
 		8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8416EB271A0A641B00CB2492 /* ListItem.xcdatamodeld */; };
 		841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */; };
 		841B60DB1A0A2C7E00C2EFF3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */; };
+		845CB34B1A0FAB9700406B58 /* go-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CB34A1A0FAB9700406B58 /* go-back.png */; };
+		845CB34F1A0FAF4400406B58 /* welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845CB34E1A0FAF4400406B58 /* welcome.mp3 */; };
 		84954B261A056B840091E43E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B251A056B840091E43E /* main.m */; };
 		84954B291A056B840091E43E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B281A056B840091E43E /* AppDelegate.m */; };
 		84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B2B1A056B840091E43E /* ToDoViewController.m */; };
@@ -92,6 +94,8 @@
 		841B60D71A0A2C4700C2EFF3 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataHelper.h; path = TourDiary/CoreDataHelper.h; sourceTree = "<group>"; };
 		841B60D81A0A2C4700C2EFF3 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataHelper.m; path = TourDiary/CoreDataHelper.m; sourceTree = "<group>"; };
 		841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		845CB34A1A0FAB9700406B58 /* go-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go-back.png"; sourceTree = "<group>"; };
+		845CB34E1A0FAF4400406B58 /* welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = welcome.mp3; sourceTree = "<group>"; };
 		84954B201A056B840091E43E /* TourDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TourDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84954B241A056B840091E43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84954B251A056B840091E43E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 		84954B231A056B840091E43E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				845CB34E1A0FAF4400406B58 /* welcome.mp3 */,
+				845CB34A1A0FAB9700406B58 /* go-back.png */,
 				84954B241A056B840091E43E /* Info.plist */,
 				84954B251A056B840091E43E /* main.m */,
 			);
@@ -380,6 +386,8 @@
 				323633931A0C1A6600A91E80 /* Images.xcassets in Resources */,
 				323633951A0C1A9200A91E80 /* Info.plist in Resources */,
 				32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */,
+				845CB34F1A0FAF4400406B58 /* welcome.mp3 in Resources */,
+				845CB34B1A0FAB9700406B58 /* go-back.png in Resources */,
 				3236336E1A0C192500A91E80 /* LandmarkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
