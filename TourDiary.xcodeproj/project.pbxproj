@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32075A401A107FF000BEE4B9 /* add-notes.png in Resources */ = {isa = PBXBuildFile; fileRef = 32075A3F1A107FF000BEE4B9 /* add-notes.png */; };
 		32361D021A1029DE008AE7D9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32361D011A1029DE008AE7D9 /* MapViewController.m */; };
 		3236336D1A0C192500A91E80 /* LandmarkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 323633671A0C192500A91E80 /* LandmarkItem.m */; };
 		3236336E1A0C192500A91E80 /* LandmarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323633681A0C192500A91E80 /* LandmarkTableViewCell.xib */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32075A3F1A107FF000BEE4B9 /* add-notes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-notes.png"; sourceTree = "<group>"; };
 		32361D001A1029DE008AE7D9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		32361D011A1029DE008AE7D9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		323633661A0C192500A91E80 /* LandmarkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkItem.h; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		84954B231A056B840091E43E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				32075A3F1A107FF000BEE4B9 /* add-notes.png */,
 				32E764301A104C7D004E5175 /* map-32.png */,
 				32E7642E1A10499D004E5175 /* landmarks.png */,
 				845CB34E1A0FAF4400406B58 /* welcome.mp3 */,
@@ -403,6 +406,7 @@
 				323633951A0C1A9200A91E80 /* Info.plist in Resources */,
 				32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */,
 				32E764311A104C7D004E5175 /* map-32.png in Resources */,
+				32075A401A107FF000BEE4B9 /* add-notes.png in Resources */,
 				845CB34F1A0FAF4400406B58 /* welcome.mp3 in Resources */,
 				32E7642F1A10499D004E5175 /* landmarks.png in Resources */,
 				845CB34B1A0FAB9700406B58 /* go-back.png in Resources */,
