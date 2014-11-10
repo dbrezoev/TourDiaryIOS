@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "TableViewCellDelegate.h"
 #import "LandmarkItem.h"
+#import "LandmarkLibrary.h"
 #import "LandmarkViewCell.h"
 #import "InfoViewController.h"
 
@@ -17,5 +18,6 @@
 UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *landmarkTableView;
+@property (strong, nonatomic) InfoViewController *infoViewController;
 
 @end

@@ -8,16 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <Parse/Parse.h>
 
-@interface LandmarkItem : NSObject
+@interface LandmarkItem : PFObject<PFSubclassing>
 
 @property (nonatomic) NSString *itemId;
 @property (nonatomic) NSData *imageData;
-@property (nonatomic, copy) NSString *landmarkLabel;
-@property (nonatomic, copy) NSString *landmarkCity;
-@property (nonatomic, copy) NSString *lmDescription;
 @property CLLocationCoordinate2D geoPoint;
--(instancetype)initLandmark:(NSData *)imageData withLabel:(NSString *)label withCity:(NSString *)city;
-+(LandmarkItem *)initItemWithImage:(NSData *)imageData withLabel:(NSString *)label withCity:(NSString *)city;
+
+@property (strong, nonatomic) NSString* LandmarkName;
+@property (strong, nonatomic) NSString* City;
+@property (strong, nonatomic) NSString* Country;
+@property (strong, nonatomic) NSNumber* Rating;
+@property (strong, nonatomic) PFGeoPoint* GeoLocation;
+@property (strong, nonatomic) NSString* Description;
+@property (strong, nonatomic) PFFile* LandmarkPicture;
+@property (strong, nonatomic) NSNumber* imageLoaded;
 
 @end

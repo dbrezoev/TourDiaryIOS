@@ -18,31 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.delegate = self;
-    [self.locationManager requestAlwaysAuthorization];
-    [self.locationManager startUpdatingLocation];
     // Do any additional setup after loading the view.
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"LandmarkInfo"];
-    [query whereKey:@"objectId" equalTo:self.landmarkItem.itemId];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (PFObject *object in objects) {
-                self.landmarkItem.lmDescription = object[@"Description"];
-                self.landmarkDescription.text = self.landmarkItem.lmDescription;
-            }
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
+
+    self.landmarkDescription.text = self.landmarkItem.Description;
     UIImage *image = [UIImage imageWithData:self.landmarkItem.imageData];
     [self.extendedImageView setImage:image];
 }
@@ -63,13 +45,35 @@
 //    mediaPicker.allowsPickingMultipleItems = YES;
 //    mediaPicker.prompt = @"Select songs to play";
 //    [self presentModalViewController:mediaPicker animated:YES];
-    NSString *lmName = self.landmarkItem.landmarkLabel;
+    if(!self.locationManager){
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.delegate = self;
+        [self.locationManager requestAlwaysAuthorization];
+        [self.locationManager startUpdatingLocation];
+    }
+    
+    NSString *lmName = self.landmarkItem.LandmarkName;
     NSString *toastMessage = [[NSString alloc] initWithFormat:@"You have registered notifier for \"%@\" landmark",lmName];
 
     [ToastView showToastInParentView:self.view withText:toastMessage withDuaration:2.5];
     
     [self.locationManager startMonitoringForRegion:[[CLCircularRegion alloc] initWithCenter:self.landmarkItem.geoPoint radius:200.0 identifier:lmName]];
 }
+
+
+//-(CLLocationManager *)getGlobalLocationManager{
+//    CLLocationManager *locationManager = nil;
+//    
+//    id appDelegate = [UIApplication sharedApplication].delegate;
+//    
+//    if([appDelegate respondsToSelector:@selector(locationManager)]){
+//        locationManager = [appDelegate locationManager];
+//    }
+//    
+//    return locationManager;
+//}
+
 
 -(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
 }

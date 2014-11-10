@@ -367,7 +367,7 @@
             </objects>
             <point key="canvasLocation" x="1665" y="1233"/>
         </scene>
-        <!--Item 1-->
+        <!--Landmarks Libarary-->
         <scene sceneID="Jrw-pO-WRN">
             <objects>
                 <viewController id="hcH-Eo-Z4v" customClass="LandmarkViewController" sceneMemberID="viewController">
@@ -405,21 +405,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.43059956129999999" green="0.36754813310000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qnH-u2-bCe" firstAttribute="bottom" secondItem="eEZ-Q7-hX5" secondAttribute="top" id="1a2-C4-h61"/>
                             <constraint firstItem="qnH-u2-bCe" firstAttribute="top" secondItem="tYV-iu-MgB" secondAttribute="bottom" constant="20" id="EIh-tM-9n3">
                                 <variation key="heightClass=compact-widthClass=compact" constant="22"/>
                             </constraint>
-                            <constraint firstItem="tYV-iu-MgB" firstAttribute="top" secondItem="EKW-sQ-lfb" secondAttribute="bottom" constant="20" id="Enl-EY-D9u">
-                                <variation key="heightClass=compact-widthClass=compact" constant="18"/>
-                            </constraint>
+                            <constraint firstItem="tYV-iu-MgB" firstAttribute="top" secondItem="EKW-sQ-lfb" secondAttribute="bottom" constant="20" id="Oze-tL-02H"/>
                             <constraint firstItem="qnH-u2-bCe" firstAttribute="leading" secondItem="zKg-k5-E4v" secondAttribute="leading" id="WSJ-KU-Fhg"/>
+                            <constraint firstItem="qnH-u2-bCe" firstAttribute="bottom" secondItem="eEZ-Q7-hX5" secondAttribute="top" id="dHe-w4-Ypj"/>
                             <constraint firstItem="tYV-iu-MgB" firstAttribute="leading" secondItem="zKg-k5-E4v" secondAttribute="leading" constant="137" id="m19-XP-ov3">
                                 <variation key="heightClass=compact-widthClass=compact" constant="154"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="qnH-u2-bCe" secondAttribute="trailing" constant="-16" id="nsw-t8-cO1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="VgG-b0-rps"/>
+                    <tabBarItem key="tabBarItem" title="Landmarks Libarary" image="landmarks.png" selectedImage="landmarks.png" id="f58-oX-Jmq"/>
                     <connections>
                         <outlet property="landmarkTableView" destination="qnH-u2-bCe" id="R2F-qE-wQC"/>
                         <segue destination="VLJ-YO-c9h" kind="show" identifier="toInfoViewSegue" id="z0h-4e-SY5"/>
@@ -433,7 +431,7 @@
         <scene sceneID="P6R-tf-RtA">
             <objects>
                 <tabBarController id="ral-rA-H1c" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2xr-U7-0fW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -441,18 +439,36 @@
                     </tabBar>
                     <connections>
                         <segue destination="hcH-Eo-Z4v" kind="relationship" relationship="viewControllers" id="Adf-ZH-0y5"/>
-                        <segue destination="SbI-8X-Anf" kind="relationship" relationship="viewControllers" id="CjI-ga-5SO"/>
+                        <segue destination="VGj-RY-Crn" kind="relationship" relationship="viewControllers" id="GN0-i8-Z0D"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e03-z4-Qwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46.5" y="270"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="YsQ-8E-8eh">
+            <objects>
+                <viewController id="VGj-RY-Crn" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ixv-D6-10m"/>
+                        <viewControllerLayoutGuide type="bottom" id="nFO-Y6-2mK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3cY-Xe-vtP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="map-32.png" selectedImage="map-32.png" id="9pF-kd-hha"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RI2-lp-iDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="1026"/>
+        </scene>
     </scenes>
     <resources>
         <image name="go-back.png" width="32" height="32"/>
+        <image name="landmarks.png" width="32" height="32"/>
+        <image name="map-32.png" width="32" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Fh5-Ym-IWo"/>
-    </inferredMetricsTieBreakers>
 </document>

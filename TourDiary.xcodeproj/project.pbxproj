@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32361D021A1029DE008AE7D9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32361D011A1029DE008AE7D9 /* MapViewController.m */; };
 		3236336D1A0C192500A91E80 /* LandmarkItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 323633671A0C192500A91E80 /* LandmarkItem.m */; };
 		3236336E1A0C192500A91E80 /* LandmarkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 323633681A0C192500A91E80 /* LandmarkTableViewCell.xib */; };
 		3236336F1A0C192500A91E80 /* LandmarkViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236336A1A0C192500A91E80 /* LandmarkViewCell.m */; };
@@ -28,6 +29,9 @@
 		323633951A0C1A9200A91E80 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323633941A0C1A9200A91E80 /* Info.plist */; };
 		3236CF161A0E353E0043967E /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3236CF151A0E353E0043967E /* InfoViewController.m */; };
 		323ED9C31A0E435F000F4787 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 323ED9C21A0E435F000F4787 /* ListItem.m */; };
+		32AC1FE51A101F9900E6CFC8 /* LandmarkLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AC1FE41A101F9900E6CFC8 /* LandmarkLibrary.m */; };
+		32E7642F1A10499D004E5175 /* landmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E7642E1A10499D004E5175 /* landmarks.png */; };
+		32E764311A104C7D004E5175 /* map-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E764301A104C7D004E5175 /* map-32.png */; };
 		32E85ED41A0F9F0900B9F034 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E85ED31A0F9F0900B9F034 /* ToastView.m */; };
 		32E85ED71A0F9F1C00B9F034 /* AudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E85ED61A0F9F1C00B9F034 /* AudioController.m */; };
 		32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E85EDA1A0F9FC500B9F034 /* LaunchScreen.xib */; };
@@ -58,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		32361D001A1029DE008AE7D9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		32361D011A1029DE008AE7D9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		323633661A0C192500A91E80 /* LandmarkItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkItem.h; sourceTree = "<group>"; };
 		323633671A0C192500A91E80 /* LandmarkItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandmarkItem.m; sourceTree = "<group>"; };
 		323633681A0C192500A91E80 /* LandmarkTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandmarkTableViewCell.xib; sourceTree = "<group>"; };
@@ -84,6 +90,10 @@
 		3236CF151A0E353E0043967E /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		323ED9C11A0E435F000F4787 /* ListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListItem.h; path = TourDiary/ListItem.h; sourceTree = "<group>"; };
 		323ED9C21A0E435F000F4787 /* ListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListItem.m; path = TourDiary/ListItem.m; sourceTree = "<group>"; };
+		32AC1FE31A101F9900E6CFC8 /* LandmarkLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandmarkLibrary.h; sourceTree = "<group>"; };
+		32AC1FE41A101F9900E6CFC8 /* LandmarkLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandmarkLibrary.m; sourceTree = "<group>"; };
+		32E7642E1A10499D004E5175 /* landmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landmarks.png; sourceTree = "<group>"; };
+		32E764301A104C7D004E5175 /* map-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-32.png"; sourceTree = "<group>"; };
 		32E85ED21A0F9F0900B9F034 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
 		32E85ED31A0F9F0900B9F034 /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
 		32E85ED51A0F9F1C00B9F034 /* AudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioController.h; sourceTree = "<group>"; };
@@ -230,6 +240,8 @@
 				84954B281A056B840091E43E /* AppDelegate.m */,
 				84954B2D1A056B840091E43E /* Main.storyboard */,
 				84954B231A056B840091E43E /* Supporting Files */,
+				32AC1FE31A101F9900E6CFC8 /* LandmarkLibrary.h */,
+				32AC1FE41A101F9900E6CFC8 /* LandmarkLibrary.m */,
 			);
 			path = TourDiary;
 			sourceTree = "<group>";
@@ -237,6 +249,8 @@
 		84954B231A056B840091E43E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				32E764301A104C7D004E5175 /* map-32.png */,
+				32E7642E1A10499D004E5175 /* landmarks.png */,
 				845CB34E1A0FAF4400406B58 /* welcome.mp3 */,
 				845CB34A1A0FAB9700406B58 /* go-back.png */,
 				84954B241A056B840091E43E /* Info.plist */,
@@ -275,6 +289,8 @@
 				84A9E1F81A0B939A001C6870 /* CreateToDoViewController.m */,
 				8497F3351A0D32EF0084644A /* UpdateToDoViewController.h */,
 				8497F3361A0D32EF0084644A /* UpdateToDoViewController.m */,
+				32361D001A1029DE008AE7D9 /* MapViewController.h */,
+				32361D011A1029DE008AE7D9 /* MapViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -386,7 +402,9 @@
 				323633931A0C1A6600A91E80 /* Images.xcassets in Resources */,
 				323633951A0C1A9200A91E80 /* Info.plist in Resources */,
 				32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */,
+				32E764311A104C7D004E5175 /* map-32.png in Resources */,
 				845CB34F1A0FAF4400406B58 /* welcome.mp3 in Resources */,
+				32E7642F1A10499D004E5175 /* landmarks.png in Resources */,
 				845CB34B1A0FAB9700406B58 /* go-back.png in Resources */,
 				3236336E1A0C192500A91E80 /* LandmarkTableViewCell.xib in Resources */,
 			);
@@ -409,6 +427,7 @@
 				8497F3371A0D32EF0084644A /* UpdateToDoViewController.m in Sources */,
 				841B60D91A0A2C4700C2EFF3 /* CoreDataHelper.m in Sources */,
 				32E85ED71A0F9F1C00B9F034 /* AudioController.m in Sources */,
+				32361D021A1029DE008AE7D9 /* MapViewController.m in Sources */,
 				84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */,
 				84954B291A056B840091E43E /* AppDelegate.m in Sources */,
 				32E85ED41A0F9F0900B9F034 /* ToastView.m in Sources */,
@@ -420,6 +439,7 @@
 				8416EB291A0A641C00CB2492 /* ListItem.xcdatamodeld in Sources */,
 				323ED9C31A0E435F000F4787 /* ListItem.m in Sources */,
 				3236336D1A0C192500A91E80 /* LandmarkItem.m in Sources */,
+				32AC1FE51A101F9900E6CFC8 /* LandmarkLibrary.m in Sources */,
 				3236CF161A0E353E0043967E /* InfoViewController.m in Sources */,
 				84954B261A056B840091E43E /* main.m in Sources */,
 			);

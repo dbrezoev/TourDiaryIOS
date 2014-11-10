@@ -8,20 +8,42 @@
 
 #import "LandmarkItem.h"
 
-@implementation LandmarkItem
-
--(instancetype)initLandmark:(NSData *)imageData withLabel:(NSString *)label withCity:(NSString *)city{
-    if(self =[super init]){
-        self.imageData = imageData;
-        self.landmarkLabel = label;
-        self.landmarkCity = city;
-    }
-    
-    return self;
+@implementation LandmarkItem{
+    NSData *imgData;
 }
 
-+(LandmarkItem *)initItemWithImage:(NSData *)imageData withLabel:(NSString *)label  withCity:(NSString *)city;{
-    return [[LandmarkItem alloc] initLandmark:imageData withLabel:label withCity:city];
+@dynamic LandmarkName;
+@dynamic Description;
+@dynamic City;
+@dynamic Country;
+@dynamic Rating;
+@dynamic GeoLocation;
+@dynamic LandmarkPicture;
+
++ (void)load {
+    [self registerSubclass];
+}
+
++ (NSString *)parseClassName {
+    return @"LandmarkInfo";
+}
+
+- (NSString *) itemId{
+    return self.objectId;
+}
+
+-(CLLocationCoordinate2D)geoPoint{
+    return CLLocationCoordinate2DMake(self.GeoLocation.latitude, self.GeoLocation.longitude);
+}
+
+-(NSData *)imageData{
+    [self.LandmarkPicture getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if(!error){
+            imgData = imageData;
+            self.imageLoaded = [NSNumber numberWithBool:YES];
+        }
+    }];
+    return imgData;
 }
 
 @end

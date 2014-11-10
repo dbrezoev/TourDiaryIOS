@@ -11,6 +11,8 @@
 @implementation LandmarkViewController{
     NSMutableArray *_landmarkItems;
     UIActivityIndicatorView *spinner;
+    NSTimer *oneSecondTimer;
+    LandmarkLibrary *landmarkLib;
 }
 
 static NSString *cellIndentifier = @"cellIndentifierr";
@@ -19,29 +21,10 @@ static NSString *cellIndentifier = @"cellIndentifierr";
     [super viewDidLoad];
     [self loadSpinner];
     _landmarkItems = [[NSMutableArray alloc] init];
-    PFQuery *query = [PFQuery queryWithClassName:@"LandmarkInfo"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            for (PFObject *object in objects) {
-                NSString *itemId = [object objectId];
-                NSString *text = object[@"LandmarkName"];
-                NSString *cityName = object[@"City"];
-                PFFile *imageFile = object[@"LandmarkPicture"];
-                PFGeoPoint *userGeoPoint = object[@"GeoLocation"];
-                NSData *imageData = [imageFile getData];
-                LandmarkItem *landmarkItem = [[LandmarkItem alloc] initLandmark:imageData withLabel:text withCity:cityName];
-                landmarkItem.itemId = itemId;
-                landmarkItem.geoPoint = CLLocationCoordinate2DMake(userGeoPoint.latitude, userGeoPoint.longitude);
-                [_landmarkItems addObject:landmarkItem];
-            }
-            
-            [self.landmarkTableView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-        [spinner stopAnimating];
-    }];
+    
+    landmarkLib = [LandmarkLibrary sharedLibraty];
+    _landmarkItems = [landmarkLib allItems];
+    oneSecondTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(performBackgroundTask) userInfo:nil repeats:YES];
     
     self.landmarkTableView.dataSource = self;
     self.landmarkTableView.delegate = self;
@@ -74,8 +57,8 @@ static NSString *cellIndentifier = @"cellIndentifierr";
     
     UIImage *image = [UIImage imageWithData:landmarkItem.imageData];
     [cell.landmarkImage setImage:image];
-    cell.landmarkName.text = landmarkItem.landmarkLabel;
-    cell.landmarkCity.text = landmarkItem.landmarkCity;
+    cell.landmarkName.text = landmarkItem.LandmarkName;
+    cell.landmarkCity.text = landmarkItem.City;
     
     return cell;
 }
@@ -93,16 +76,28 @@ static NSString *cellIndentifier = @"cellIndentifierr";
 }
 
 -(IBAction)returnToLandmarkController:(UIStoryboardSegue *) segue{
-    
+    self.infoViewController = segue.sourceViewController;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Section: Row: selected and its data is");
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [self performSegueWithIdentifier:@"toInfoViewSegue" sender:indexPath];
     
 }
 
+- (void)performBackgroundTask
+{
+    NSLog(@"enter");
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if(landmarkLib.allItemsLoaded){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [oneSecondTimer invalidate];
+                [self.landmarkTableView reloadData];
+                [spinner stopAnimating];
+            });
+        }
+    });
+}
 @end

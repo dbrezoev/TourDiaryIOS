@@ -26,6 +26,4 @@
 - (IBAction)viewNotes:(id)sender;
 - (IBAction)notifyMe:(id)sender;
 
-    
-
 @end
