@@ -20,6 +20,7 @@
     [super viewDidLoad];
     _cdHelper = [[CoreDataHelper alloc] init];
     [_cdHelper setupCoreData];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_tile.png"]];
 }
 
 - (IBAction)save:(UIButton *)sender {

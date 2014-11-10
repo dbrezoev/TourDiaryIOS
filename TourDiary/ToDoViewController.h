@@ -12,7 +12,6 @@
 #import "LandmarkItem.h"
 
 @interface ToDoViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, TableViewCellDelegate>
-//- (IBAction)createToDo:(UIButton *)sender;
 - (IBAction)backButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) LandmarkItem *landmarkItem;

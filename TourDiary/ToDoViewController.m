@@ -28,7 +28,6 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    NSLog(@"%@", self.landmarkItem.itemId);
     _toDoItems = [NSMutableArray array];
     _cdHelper = [[CoreDataHelper alloc] init];
     [_cdHelper setupCoreData];
@@ -38,7 +37,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_tile.png"]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -77,7 +76,6 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
 
 //style the cells
 -(UIColor*)colorForIndex:(NSInteger) index {
-    //TODO: Change the colors to look better
     if(index % 2 == 0){
         return [UIColor colorWithRed: 0.690 green: 0.769 blue: 0.871 alpha:1.0];
     }
@@ -92,15 +90,10 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
         CreateToDoViewController *viewControllerToGo = [segue destinationViewController];
         viewControllerToGo.landmarkItem = self.landmarkItem;
     }
-//    else if([[segue identifier] isEqualToString:@"UpdateIdentifier"]){
-//        UpdateToDoViewController* updateController = [segue destinationViewController];
-//        updateController.listItem = self.
-//    }
 }
 
 #pragma mark - CoreData CRUD operations
 -(void)update:(ListItem*) item{
-    
 //    [self performSegueWithIdentifier:@"UpdateIdentifier" sender:self];
 //    NSLog(@"%@",item.content);
 }
@@ -131,7 +124,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
     NSArray* visibleCells = [self.tableView visibleCells];
     
     UIView* lastView = [visibleCells lastObject];
-    bool startAnimating = false;
+    BOOL startAnimating = NO;
     
     for(CustomTableViewCell* cell in visibleCells) {
         if (startAnimating) {
@@ -151,7 +144,7 @@ static const float DEFAULT_ROW_HEIGHT = 50.0f;
         
         // if you have reached the item that was deleted, start animating
         if (cell.todoItem == todoItem) {
-            startAnimating = true;
+            startAnimating = YES;
             cell.hidden = YES;
         }
     }

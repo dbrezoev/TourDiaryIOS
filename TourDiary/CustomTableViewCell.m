@@ -31,9 +31,9 @@ const float DELETE_LABEL_WIDTH = 50.0f;
         recognizer.delegate = self;
         [self addGestureRecognizer:recognizer];
         
-        UILongPressGestureRecognizer* recognizerL = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
-        recognizerL.minimumPressDuration = 2.0f;
-        [self addGestureRecognizer:recognizerL];
+        UILongPressGestureRecognizer* recognizerLong = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+        recognizerLong.minimumPressDuration = 2.0f;
+        [self addGestureRecognizer:recognizerLong];
         
         UITapGestureRecognizer* doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
         doubleTapGestureRecognizer.numberOfTapsRequired = 2;
@@ -47,7 +47,6 @@ const float DELETE_LABEL_WIDTH = 50.0f;
     UILabel* label = [[UILabel alloc] initWithFrame:CGRectNull];
     label.textColor = [UIColor whiteColor];
     label.font = [UIFont boldSystemFontOfSize:32.0];
-    label.backgroundColor = [UIColor clearColor];
     return label;
 }
 
@@ -60,8 +59,10 @@ const float DELETE_LABEL_WIDTH = 50.0f;
 
 #pragma mark - GesturesHandling
 -(void)handleDoubleTap:(UITapGestureRecognizer*)sender{
-    NSLog(@"DOUBLE TAPPPPPPPPPPPPPPPPPPPPP");
-    [self.updater update:self.todoItem];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"User guide info" message:[NSString stringWithFormat:@"Delete - swipe left\n See info - long press\nAdd new item - press the button up right"]  delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    alert.alertViewStyle = UIAlertViewStyleDefault;
+    [alert show];
+    //[self.updater update:self.todoItem];
 }
 
 -(void)handlePan:(UIPanGestureRecognizer *)recognizer {
@@ -75,18 +76,18 @@ const float DELETE_LABEL_WIDTH = 50.0f;
         // translate the center
         CGPoint translation = [recognizer translationInView:self];
         self.center = CGPointMake(_originalCenter.x + translation.x, _originalCenter.y);
-        // determine whether the item has been dragged far enough to initiate a delete / complete
+        // checks if user is dragged to the half of the screen
         _deleteOnDragRelease = self.frame.origin.x < -self.frame.size.width / 2;
         _markDoneOnDragRelease = self.frame.origin.x > self.frame.size.width / 2;
         
-        float cueAlpha = fabsf(self.frame.origin.x) / (self.frame.size.width / 2);
-        _deleteLabel.alpha = cueAlpha;
+        float labelOpacity = fabsf(self.frame.origin.x) / (self.frame.size.width / 2);
+        _deleteLabel.alpha = labelOpacity;
         _deleteLabel.textColor = _deleteOnDragRelease ?
         [UIColor redColor] : [UIColor whiteColor];
     }
     
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        // the frame this cell had before drag
+        // the initial frame to return if ecent is not fired
         CGRect originalFrame = CGRectMake(0, self.frame.origin.y,
                                           self.bounds.size.width, self.bounds.size.height);
         if (!_deleteOnDragRelease) {
@@ -101,12 +102,14 @@ const float DELETE_LABEL_WIDTH = 50.0f;
         if (_deleteOnDragRelease) {
             [self.delegate deleteItem:self.todoItem];
         }
+        
         if (_markDoneOnDragRelease) {
             self.todoItem.completed = 0;
             //self.textLabel.backgroundColor = [UIColor greenColor];
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-            [alert show];
+            
+//            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//            alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+//            [alert show];
             
         }
     }
@@ -118,10 +121,6 @@ const float DELETE_LABEL_WIDTH = 50.0f;
     }
     else if (sender.state == UIGestureRecognizerStateBegan){
         NSLog(@"UIGestureRecognizerStateBegan.");
-//        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"MESSAGE" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-//        [alert show];
-        
         
         NSDateFormatter *gmtFormatter=[[NSDateFormatter alloc] init];
         [gmtFormatter setDateFormat:@"dd MMMM yyyy HH:mm:ss"];
@@ -132,13 +131,6 @@ const float DELETE_LABEL_WIDTH = 50.0f;
         [alert show];
     }
 }
-
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    NSString* input = [[alertView textFieldAtIndex:0] text];
-//    
-//    ToDoItem* item = [[ToDoItem alloc] initWithContent:input];
-//    [self.delegate addItem:item];
-//}
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {

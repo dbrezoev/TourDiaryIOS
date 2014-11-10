@@ -15,7 +15,7 @@
 #import "InfoViewController.h"
 
 @interface LandmarkViewController : UIViewController<UITableViewDataSource,
-UITableViewDelegate>
+UITableViewDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *landmarkTableView;
 @property (strong, nonatomic) InfoViewController *infoViewController;

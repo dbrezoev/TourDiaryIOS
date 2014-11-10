@@ -130,35 +130,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GPL-QI-7g9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPL-QI-7g9">
                                 <rect key="frame" x="39" y="36" width="523" height="250"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="39" y="36" width="323" height="250"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOQ-fh-EQY">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOQ-fh-EQY">
                                 <rect key="frame" x="195" y="303" width="76" height="30"/>
                                 <state key="normal" title="Notify me!">
                                     <color key="titleColor" red="0.92941182850000004" green="0.92941182850000004" blue="0.92941182850000004" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="230" y="305" width="124" height="30"/>
+                                    <rect key="frame" x="138" y="305" width="124" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="notifyMe:" destination="VLJ-YO-c9h" eventType="touchUpInside" id="F70-iA-YJK"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="test" translatesAutoresizingMaskIntoConstraints="NO" id="N6w-sC-Deg">
-                                <rect key="frame" x="39" y="341" width="290" height="128"/>
-                                <color key="backgroundColor" red="0.43059956129999999" green="0.36754813310000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="39" y="343" width="323" height="144"/>
-                                </variation>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e14-Gf-0wq">
+                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e14-Gf-0wq">
                                 <rect key="frame" x="51" y="503" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="8Zh-zz-VJ1"/>
@@ -184,7 +175,7 @@
                                     <segue destination="F30-1h-FTv" kind="unwind" unwindAction="returnToLandmarkController:" id="zst-bL-26M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WF-aZ-fxf">
+                            <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WF-aZ-fxf">
                                 <rect key="frame" x="217" y="503" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="XUx-Yu-nPs"/>
@@ -210,6 +201,15 @@
                                     <segue destination="SbI-8X-Anf" kind="show" identifier="toToDoController" id="Fh5-Ym-IWo"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="test" translatesAutoresizingMaskIntoConstraints="NO" id="N6w-sC-Deg">
+                                <rect key="frame" x="39" y="341" width="290" height="128"/>
+                                <color key="backgroundColor" red="0.43059956129999999" green="0.36754813310000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="39" y="343" width="323" height="144"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.43059956129999999" green="0.36754813310000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -289,14 +289,26 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8P-6w-H3c">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Cancel" backgroundImage="btn_field.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="47" y="46" width="48" height="30"/>
+                                    <rect key="frame" x="47" y="46" width="104" height="59"/>
                                 </variation>
                                 <connections>
                                     <action selector="cancelCreatingToDo:" destination="2St-tb-8ZS" eventType="touchUpInside" id="nZ7-66-2cn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBP-JR-mt0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Save" backgroundImage="btn_field.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="236" y="46" width="96" height="58"/>
+                                </variation>
+                                <connections>
+                                    <action selector="save:" destination="2St-tb-8ZS" eventType="touchUpInside" id="K8g-qa-4OC"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ldq-k4-pQM">
@@ -304,35 +316,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="47" y="132" width="285" height="30"/>
+                                    <rect key="frame" x="47" y="162" width="285" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBP-JR-mt0">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="286" y="46" width="34" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="save:" destination="2St-tb-8ZS" eventType="touchUpInside" id="K8g-qa-4OC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="U8P-6w-H3c"/>
-                                <exclude reference="Ldq-k4-pQM"/>
                                 <exclude reference="EBP-JR-mt0"/>
+                                <exclude reference="Ldq-k4-pQM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="U8P-6w-H3c"/>
-                                <include reference="Ldq-k4-pQM"/>
                                 <include reference="EBP-JR-mt0"/>
+                                <include reference="Ldq-k4-pQM"/>
                             </mask>
                         </variation>
                     </view>
@@ -358,26 +358,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5b5-kJ-Odo">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Cancel" backgroundImage="btn_field.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="40" y="63" width="48" height="30"/>
+                                    <rect key="frame" x="40" y="63" width="72" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="cancelUpdatingTodo:" destination="5Wf-pL-nox" eventType="touchUpInside" id="Inz-vh-Jsn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-pE-RUh">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="309" y="63" width="34" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="save:" destination="5Wf-pL-nox" eventType="touchUpInside" id="JEo-90-hG2"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kcH-og-LrE">
@@ -388,20 +376,32 @@
                                     <rect key="frame" x="40" y="133" width="303" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfz-pE-RUh">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Save" backgroundImage="btn_field.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="284" y="63" width="59" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="save:" destination="5Wf-pL-nox" eventType="touchUpInside" id="JEo-90-hG2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="5b5-kJ-Odo"/>
-                                <exclude reference="tfz-pE-RUh"/>
                                 <exclude reference="kcH-og-LrE"/>
+                                <exclude reference="tfz-pE-RUh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="5b5-kJ-Odo"/>
-                                <include reference="tfz-pE-RUh"/>
                                 <include reference="kcH-og-LrE"/>
+                                <include reference="tfz-pE-RUh"/>
                             </mask>
                         </variation>
                     </view>
@@ -553,6 +553,7 @@
     </scenes>
     <resources>
         <image name="add-notes.png" width="32" height="32"/>
+        <image name="btn_field.png" width="146" height="102"/>
         <image name="go-back.png" width="32" height="32"/>
         <image name="landmarks.png" width="32" height="32"/>
         <image name="map-32.png" width="32" height="32"/>

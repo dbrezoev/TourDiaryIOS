@@ -41,6 +41,10 @@
 		841B60DB1A0A2C7E00C2EFF3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */; };
 		845CB34B1A0FAB9700406B58 /* go-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 845CB34A1A0FAB9700406B58 /* go-back.png */; };
 		845CB34F1A0FAF4400406B58 /* welcome.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 845CB34E1A0FAF4400406B58 /* welcome.mp3 */; };
+		846CF7321A10EB8C00CE9F7C /* bg_tile.png in Resources */ = {isa = PBXBuildFile; fileRef = 846CF72E1A10EB8C00CE9F7C /* bg_tile.png */; };
+		846CF7331A10EB8C00CE9F7C /* bg_tile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846CF72F1A10EB8C00CE9F7C /* bg_tile@2x.png */; };
+		846CF7341A10EB8C00CE9F7C /* btn_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 846CF7301A10EB8C00CE9F7C /* btn_field.png */; };
+		846CF7351A10EB8C00CE9F7C /* btn_field@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846CF7311A10EB8C00CE9F7C /* btn_field@2x.png */; };
 		84954B261A056B840091E43E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B251A056B840091E43E /* main.m */; };
 		84954B291A056B840091E43E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B281A056B840091E43E /* AppDelegate.m */; };
 		84954B2C1A056B840091E43E /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84954B2B1A056B840091E43E /* ToDoViewController.m */; };
@@ -108,6 +112,10 @@
 		841B60DA1A0A2C7E00C2EFF3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		845CB34A1A0FAB9700406B58 /* go-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go-back.png"; sourceTree = "<group>"; };
 		845CB34E1A0FAF4400406B58 /* welcome.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = welcome.mp3; sourceTree = "<group>"; };
+		846CF72E1A10EB8C00CE9F7C /* bg_tile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_tile.png; sourceTree = "<group>"; };
+		846CF72F1A10EB8C00CE9F7C /* bg_tile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_tile@2x.png"; sourceTree = "<group>"; };
+		846CF7301A10EB8C00CE9F7C /* btn_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_field.png; sourceTree = "<group>"; };
+		846CF7311A10EB8C00CE9F7C /* btn_field@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_field@2x.png"; sourceTree = "<group>"; };
 		84954B201A056B840091E43E /* TourDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TourDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84954B241A056B840091E43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84954B251A056B840091E43E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -251,6 +259,10 @@
 		84954B231A056B840091E43E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				846CF72E1A10EB8C00CE9F7C /* bg_tile.png */,
+				846CF72F1A10EB8C00CE9F7C /* bg_tile@2x.png */,
+				846CF7301A10EB8C00CE9F7C /* btn_field.png */,
+				846CF7311A10EB8C00CE9F7C /* btn_field@2x.png */,
 				32075A3F1A107FF000BEE4B9 /* add-notes.png */,
 				32E764301A104C7D004E5175 /* map-32.png */,
 				32E7642E1A10499D004E5175 /* landmarks.png */,
@@ -405,11 +417,15 @@
 				323633931A0C1A6600A91E80 /* Images.xcassets in Resources */,
 				323633951A0C1A9200A91E80 /* Info.plist in Resources */,
 				32E85EDC1A0F9FC500B9F034 /* LaunchScreen.xib in Resources */,
+				846CF7321A10EB8C00CE9F7C /* bg_tile.png in Resources */,
 				32E764311A104C7D004E5175 /* map-32.png in Resources */,
 				32075A401A107FF000BEE4B9 /* add-notes.png in Resources */,
 				845CB34F1A0FAF4400406B58 /* welcome.mp3 in Resources */,
 				32E7642F1A10499D004E5175 /* landmarks.png in Resources */,
+				846CF7331A10EB8C00CE9F7C /* bg_tile@2x.png in Resources */,
+				846CF7341A10EB8C00CE9F7C /* btn_field.png in Resources */,
 				845CB34B1A0FAB9700406B58 /* go-back.png in Resources */,
+				846CF7351A10EB8C00CE9F7C /* btn_field@2x.png in Resources */,
 				3236336E1A0C192500A91E80 /* LandmarkTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
